@@ -101,24 +101,24 @@ export function CodeEditor({ value, onChange, readOnly = false, height = "100%" 
         { token: "identifier", foreground: "9CDCFE" },
       ],
       colors: {
-        "editor.background": "#0A0A0F",
+        "editor.background": "#000000",
         "editor.foreground": "#B8BCC8",
-        "editor.lineHighlightBackground": "#0F1117",
+        "editor.lineHighlightBackground": "#0a0a0a",
         "editor.selectionBackground": "#FFC51720",
         "editor.inactiveSelectionBackground": "#FFC51710",
-        "editorLineNumber.foreground": "#2A2D37",
+        "editorLineNumber.foreground": "#2a2a2a",
         "editorLineNumber.activeForeground": "#5A5F73",
         "editorCursor.foreground": "#FFC517",
         "editor.selectionHighlightBackground": "#FFC51715",
         "editorBracketMatch.background": "#FFC51720",
         "editorBracketMatch.border": "#FFC51750",
-        "editorIndentGuide.background": "#1A1D27",
-        "editorWidget.background": "#0F1117",
-        "editorWidget.border": "#1A1D27",
-        "input.background": "#0F1117",
-        "input.border": "#1A1D27",
-        "scrollbarSlider.background": "#1A1D2780",
-        "scrollbarSlider.hoverBackground": "#2A2D3780",
+        "editorIndentGuide.background": "#1a1a1a",
+        "editorWidget.background": "#0a0a0a",
+        "editorWidget.border": "#1a1a1a",
+        "input.background": "#0a0a0a",
+        "input.border": "#1a1a1a",
+        "scrollbarSlider.background": "#1a1a1a80",
+        "scrollbarSlider.hoverBackground": "#2a2a2a80",
       },
     });
 
@@ -152,7 +152,7 @@ export function CodeEditor({ value, onChange, readOnly = false, height = "100%" 
       onChange={(v) => onChange(v ?? "")}
       onMount={handleMount}
       loading={
-        <div className="flex h-full items-center justify-center bg-[#0A0A0F]">
+        <div className="flex h-full items-center justify-center bg-[#000000]">
           <span className="text-[12px] text-[#3A3D47] animate-pulse">loading editor...</span>
         </div>
       }

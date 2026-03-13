@@ -21,7 +21,7 @@ export function WeekDetail({ week }: { week: Week }) {
       {/* Breadcrumb */}
       <div className="mb-6 animate-fade-in text-[12px] text-[#3A3D47]">
         <Link href="/curriculum" className="transition hover:text-[#5A5F73]">curriculum</Link>
-        <span className="mx-2 text-[#2A2D37]">/</span>
+        <span className="mx-2 text-[#2a2a2a]">/</span>
         <span className="text-[#5A5F73]">week_{week.number}</span>
       </div>
 
@@ -80,7 +80,7 @@ export function WeekDetail({ week }: { week: Week }) {
                 <span className={`flex h-6 w-6 shrink-0 items-center justify-center border text-[11px] ${
                   done
                     ? "border-[#FFC517]/30 bg-[#FFC517]/8 text-[#FFC517]"
-                    : "border-[#1A1D27] text-[#2A2D37] group-hover:border-[#2A2D37]"
+                    : "border-[#1a1a1a] text-[#2a2a2a] group-hover:border-[#2a2a2a]"
                 }`}>
                   {done ? <Check size={12} /> : String(i + 1).padStart(2, "0")}
                 </span>
@@ -91,7 +91,7 @@ export function WeekDetail({ week }: { week: Week }) {
                   <Clock size={10} />
                   {lesson.duration}
                 </span>
-                <ArrowRight size={12} className="text-[#2A2D37] transition group-hover:translate-x-0.5 group-hover:text-[#FFC517]" />
+                <ArrowRight size={12} className="text-[#2a2a2a] transition group-hover:translate-x-0.5 group-hover:text-[#FFC517]" />
               </Link>
             );
           })}
@@ -114,7 +114,7 @@ export function WeekDetail({ week }: { week: Week }) {
                   <span className={`flex h-6 w-6 shrink-0 items-center justify-center border text-[11px] ${
                     done
                       ? "border-[#FFC517]/30 bg-[#FFC517]/8 text-[#FFC517]"
-                      : "border-[#1A1D27] text-[#2A2D37] group-hover:border-[#2A2D37]"
+                      : "border-[#1a1a1a] text-[#2a2a2a] group-hover:border-[#2a2a2a]"
                   }`}>
                     {done ? <Check size={12} /> : <Play size={10} />}
                   </span>
@@ -129,7 +129,7 @@ export function WeekDetail({ week }: { week: Week }) {
                   }`}>
                     {ch.difficulty}
                   </span>
-                  <ArrowRight size={12} className="text-[#2A2D37] transition group-hover:translate-x-0.5 group-hover:text-[#FFC517]" />
+                  <ArrowRight size={12} className="text-[#2a2a2a] transition group-hover:translate-x-0.5 group-hover:text-[#FFC517]" />
                 </Link>
               );
             })}
@@ -171,7 +171,7 @@ export function WeekDetail({ week }: { week: Week }) {
         <div className={`overflow-hidden transition-all duration-300 ${notesOpen ? "mt-3 max-h-[2000px] opacity-100" : "max-h-0 opacity-0"}`}>
           <div className="space-y-1">
             {week.instructorNotes.map((note, i) => (
-              <div key={i} className="flex items-start gap-3 border border-[#1A1D27] bg-[#0F1117] px-4 py-3 text-[12px] text-[#5A5F73]">
+              <div key={i} className="flex items-start gap-3 border border-[#1a1a1a] bg-[#0a0a0a] px-4 py-3 text-[12px] text-[#5A5F73]">
                 <span className="text-[#3A3D47]">{String(i + 1).padStart(2, "0")}.</span>
                 {note}
               </div>
@@ -181,7 +181,7 @@ export function WeekDetail({ week }: { week: Week }) {
       </div>
 
       {/* Week nav */}
-      <div className="flex items-center justify-between border-t border-[#1A1D27] pt-6">
+      <div className="flex items-center justify-between border-t border-[#1a1a1a] pt-6">
         {week.number > 1 ? (
           <Link href={`/curriculum/week/${week.number - 1}`} className="group flex items-center gap-2 text-[13px] text-[#3A3D47] transition hover:text-[#FFC517]">
             <ArrowRight size={12} className="rotate-180 transition group-hover:-translate-x-0.5" />

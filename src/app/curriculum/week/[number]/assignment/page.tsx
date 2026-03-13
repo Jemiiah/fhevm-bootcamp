@@ -28,9 +28,9 @@ export default function AssignmentPage() {
       {/* Breadcrumb */}
       <div className="mb-6 animate-fade-in text-[12px] text-[#3A3D47]">
         <Link href="/curriculum" className="transition hover:text-[#5A5F73]">curriculum</Link>
-        <span className="mx-2 text-[#2A2D37]">/</span>
+        <span className="mx-2 text-[#2a2a2a]">/</span>
         <Link href={`/curriculum/week/${weekNumber}`} className="transition hover:text-[#5A5F73]">week_{weekNumber}</Link>
-        <span className="mx-2 text-[#2A2D37]">/</span>
+        <span className="mx-2 text-[#2a2a2a]">/</span>
         <span className="text-[#5A5F73]">assignment</span>
       </div>
 
@@ -67,7 +67,7 @@ export default function AssignmentPage() {
         <h2 className="section-label mb-3">// REQUIREMENTS</h2>
         <div className="stagger space-y-1">
           {hw.requirements.map((r, i) => (
-            <div key={i} className="flex items-start gap-3 border border-[#1A1D27] bg-[#0F1117] px-4 py-3 text-[13px] text-[#5A5F73]">
+            <div key={i} className="flex items-start gap-3 border border-[#1a1a1a] bg-[#0a0a0a] px-4 py-3 text-[13px] text-[#5A5F73]">
               <span className="text-[#FFC517]">{String(i + 1).padStart(2, "0")}.</span>
               {r}
             </div>
@@ -83,11 +83,11 @@ export default function AssignmentPage() {
             <div
               key={i}
               className={`flex items-center justify-between px-4 py-3 text-[12px] ${
-                i !== hw.gradingCriteria.length - 1 ? "border-b border-[#1A1D27]" : ""
+                i !== hw.gradingCriteria.length - 1 ? "border-b border-[#1a1a1a]" : ""
               }`}
             >
               <div className="flex items-center gap-2.5">
-                <CheckCircle size={11} className="text-[#2A2D37]" />
+                <CheckCircle size={11} className="text-[#2a2a2a]" />
                 <span className="text-[#5A5F73]">{g.criterion}</span>
               </div>
               <span className="font-semibold tabular-nums text-[#B8BCC8]">{g.points} pts</span>
@@ -101,7 +101,7 @@ export default function AssignmentPage() {
       </div>
 
       {/* Navigation */}
-      <div className="flex items-center justify-between border-t border-[#1A1D27] pt-6 animate-fade-in-up" style={{ animationDelay: "0.25s" }}>
+      <div className="flex items-center justify-between border-t border-[#1a1a1a] pt-6 animate-fade-in-up" style={{ animationDelay: "0.25s" }}>
         <Link
           href={`/curriculum/week/${weekNumber}`}
           className="group flex items-center gap-2 text-[12px] text-[#3A3D47] transition hover:text-[#FFC517]"

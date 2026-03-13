@@ -110,9 +110,9 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
   ];
 
   return (
-    <div className="flex h-screen flex-col bg-[#0A0A0F] pt-14">
+    <div className="flex h-screen flex-col bg-[#000000] pt-14">
       {/* Top bar */}
-      <div className="flex items-center justify-between border-b border-[#1A1D27] bg-[#0C0D14] px-4 py-2">
+      <div className="flex items-center justify-between border-b border-[#1a1a1a] bg-[#080808] px-4 py-2">
         <div className="flex items-center gap-3">
           <Link
             href={`/curriculum/week/${challenge.weekNumber}`}
@@ -121,7 +121,7 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
             <ChevronLeft size={12} />
             week_{challenge.weekNumber}
           </Link>
-          <span className="h-3 w-px bg-[#1A1D27]" />
+          <span className="h-3 w-px bg-[#1a1a1a]" />
           <h1 className="text-[12px] font-medium text-[#B8BCC8]">{challenge.title}</h1>
           <span className={`tag text-[9px] ${
             challenge.difficulty === "Starter" ? "text-emerald-400 border-emerald-500/20" :
@@ -161,9 +161,9 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
       {/* Main split pane */}
       <div className="flex flex-1 overflow-hidden">
         {/* Left panel — Tabbed (Description / Result / Submissions / Solutions) */}
-        <div className="w-[420px] shrink-0 flex flex-col overflow-hidden border-r border-[#1A1D27] bg-[#0A0A0F]">
+        <div className="w-[420px] shrink-0 flex flex-col overflow-hidden border-r border-[#1a1a1a] bg-[#000000]">
           {/* Tab bar */}
-          <div className="flex border-b border-[#1A1D27] bg-[#0C0D14]">
+          <div className="flex border-b border-[#1a1a1a] bg-[#080808]">
             {leftTabs.map((tab) => (
               <button
                 key={tab.key}
@@ -200,7 +200,7 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
                   <h2 className="section-label mb-3">// INSTRUCTIONS</h2>
                   <ol className="space-y-1">
                     {challenge.instructions.map((inst, i) => (
-                      <li key={i} className="flex items-start gap-2.5 border border-[#1A1D27] bg-[#0F1117] px-3 py-2.5 text-[12px] text-[#5A5F73]">
+                      <li key={i} className="flex items-start gap-2.5 border border-[#1a1a1a] bg-[#0a0a0a] px-3 py-2.5 text-[12px] text-[#5A5F73]">
                         <span className="text-[#FFC517] shrink-0">{String(i + 1).padStart(2, "0")}.</span>
                         {inst}
                       </li>
@@ -230,11 +230,11 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
 
                 {/* Score summary if results exist */}
                 {results && (
-                  <div className="border border-[#1A1D27] bg-[#0F1117] p-4">
+                  <div className="border border-[#1a1a1a] bg-[#0a0a0a] p-4">
                     <div className="flex items-center justify-between">
                       <span className="text-[11px] text-[#3A3D47] uppercase tracking-wider">score</span>
                       <div className="flex items-center gap-2">
-                        <div className="h-1 w-20 bg-[#1A1D27] overflow-hidden">
+                        <div className="h-1 w-20 bg-[#1a1a1a] overflow-hidden">
                           <div
                             className="h-full transition-all duration-500"
                             style={{
@@ -261,13 +261,13 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
                     <span className="text-[12px] animate-pulse">running tests...</span>
                   </div>
                 ) : !results ? (
-                  <div className="flex flex-1 items-center justify-center text-[#2A2D37]">
+                  <div className="flex flex-1 items-center justify-center text-[#2a2a2a]">
                     <span className="text-[12px]">&gt; click &quot;run tests&quot; to see results</span>
                   </div>
                 ) : (
                   <>
                     {/* Summary bar */}
-                    <div className="flex items-center justify-between border-b border-[#1A1D27] px-5 py-3">
+                    <div className="flex items-center justify-between border-b border-[#1a1a1a] px-5 py-3">
                       <span className={`text-[13px] font-semibold ${results.every(r => r.passed) ? "text-emerald-400" : "text-[#5A5F73]"}`}>
                         {results.filter(r => r.passed).length}/{results.length} tests passed
                       </span>
@@ -297,7 +297,7 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
                     </div>
 
                     {/* Log output */}
-                    <div className="border-t border-[#1A1D27] px-5 py-3">
+                    <div className="border-t border-[#1a1a1a] px-5 py-3">
                       <span className="text-[10px] uppercase tracking-widest text-[#3A3D47]">log output</span>
                       <div className="mt-2 text-[11px] text-[#3A3D47] font-mono">
                         {results.every(r => r.passed) ? (
@@ -326,9 +326,9 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
               <div className="p-5">
                 {submissions.length === 0 ? (
                   <div className="flex flex-col items-center justify-center py-16 text-center">
-                    <History size={24} className="mb-3 text-[#2A2D37]" />
+                    <History size={24} className="mb-3 text-[#2a2a2a]" />
                     <span className="text-[13px] text-[#3A3D47]">No submissions yet</span>
-                    <span className="mt-1 text-[11px] text-[#2A2D37]">Run tests to create your first submission</span>
+                    <span className="mt-1 text-[11px] text-[#2a2a2a]">Run tests to create your first submission</span>
                   </div>
                 ) : (
                   <div className="space-y-2">
@@ -341,7 +341,7 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
                           className={`border px-4 py-3 ${
                             sub.allPassed
                               ? "border-emerald-500/15 bg-emerald-500/[0.03]"
-                              : "border-[#1A1D27] bg-[#0F1117]"
+                              : "border-[#1a1a1a] bg-[#0a0a0a]"
                           }`}
                         >
                           <div className="flex items-center justify-between">
@@ -390,13 +390,13 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
                   </div>
 
                   {!showSolution ? (
-                    <div className="flex flex-col items-center justify-center border border-[#1A1D27] bg-[#0F1117] py-12 text-center">
-                      <Eye size={20} className="mb-3 text-[#2A2D37]" />
+                    <div className="flex flex-col items-center justify-center border border-[#1a1a1a] bg-[#0a0a0a] py-12 text-center">
+                      <Eye size={20} className="mb-3 text-[#2a2a2a]" />
                       <span className="text-[12px] text-[#3A3D47]">Solution is hidden</span>
-                      <span className="mt-1 text-[11px] text-[#2A2D37]">Try solving it yourself first!</span>
+                      <span className="mt-1 text-[11px] text-[#2a2a2a]">Try solving it yourself first!</span>
                       <button
                         onClick={() => setShowSolution(true)}
-                        className="mt-4 flex items-center gap-1.5 px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#3A3D47] border border-[#1A1D27] transition hover:border-[#FFC517]/30 hover:text-[#FFC517]"
+                        className="mt-4 flex items-center gap-1.5 px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#3A3D47] border border-[#1a1a1a] transition hover:border-[#FFC517]/30 hover:text-[#FFC517]"
                       >
                         <Eye size={11} />
                         reveal solution
@@ -411,7 +411,7 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
                           <span className="t-dot green" />
                           <span className="ml-2 text-[10px] text-[#3A3D47]">solution.sol</span>
                         </div>
-                        <span className="text-[9px] uppercase tracking-wider text-[#2A2D37]">solidity</span>
+                        <span className="text-[9px] uppercase tracking-wider text-[#2a2a2a]">solidity</span>
                       </div>
                       <pre className="!border-0 !bg-transparent p-4 text-[11px] leading-[1.8] text-[#5A5F73] overflow-x-auto">
                         <code>{challenge.solutionCode}</code>
@@ -421,7 +421,7 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
                 </div>
 
                 {/* Community-style info */}
-                <div className="border border-[#1A1D27] bg-[#0F1117] px-4 py-3">
+                <div className="border border-[#1a1a1a] bg-[#0a0a0a] px-4 py-3">
                   <span className="text-[11px] text-[#3A3D47]">
                     Community solutions coming soon. For now, compare your approach with the reference solution above.
                   </span>
@@ -434,7 +434,7 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
         {/* Right panel — Editor + Actions */}
         <div className="flex flex-1 flex-col overflow-hidden">
           {/* Editor tabs + actions */}
-          <div className="flex items-center justify-between border-b border-[#1A1D27] bg-[#0C0D14] px-2">
+          <div className="flex items-center justify-between border-b border-[#1a1a1a] bg-[#080808] px-2">
             <div className="flex">
               <button
                 onClick={() => setEditorTab("solution")}
@@ -470,7 +470,7 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
               <button
                 onClick={runTests}
                 disabled={isRunning}
-                className="flex items-center gap-1.5 bg-[#FFC517] px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider text-[#0A0A0F] transition hover:bg-white hover:shadow-[0_0_12px_rgba(255,197,23,0.15)] disabled:opacity-50"
+                className="flex items-center gap-1.5 bg-[#FFC517] px-4 py-1.5 text-[11px] font-bold uppercase tracking-wider text-[#000000] transition hover:bg-white hover:shadow-[0_0_12px_rgba(255,197,23,0.15)] disabled:opacity-50"
               >
                 {isRunning ? (
                   <span className="animate-pulse">running...</span>

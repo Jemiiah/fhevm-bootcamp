@@ -2,13 +2,13 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="border-t border-[#1A1D27] bg-[#0A0A0F]">
+    <footer className="border-t border-[#1a1a1a] bg-[#000000]">
       <div className="mx-auto max-w-6xl px-6 py-14">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5">
-              <span className="flex h-6 w-6 items-center justify-center bg-[#FFC517] text-[10px] font-black text-[#0A0A0F]">
+              <span className="flex h-6 w-6 items-center justify-center bg-[#FFC517] text-[10px] font-black text-[#000000]">
                 F
               </span>
               <span className="text-[12px] font-semibold text-[#B8BCC8]">
@@ -19,7 +19,7 @@ export function Footer() {
               A 4-week intensive program to master confidential smart contracts
               using Fully Homomorphic Encryption on the EVM.
             </p>
-            <p className="mt-2 text-[11px] text-[#2A2D37]">
+            <p className="mt-2 text-[11px] text-[#2a2a2a]">
               Powered by{" "}
               <a href="https://www.zama.ai" target="_blank" rel="noopener noreferrer" className="text-[#3A3D47] transition hover:text-[#FFC517]">
                 Zama
@@ -91,15 +91,15 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-[#1A1D27] pt-6 sm:flex-row">
-          <p className="text-[11px] text-[#2A2D37]">
+        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-[#1a1a1a] pt-6 sm:flex-row">
+          <p className="text-[11px] text-[#2a2a2a]">
             &copy; {new Date().getFullYear()} FHEVM Bootcamp. Built for the Zama Developer Program.
           </p>
           <div className="flex items-center gap-4">
-            <a href="https://github.com/zama-ai/fhevm" target="_blank" rel="noopener noreferrer" className="text-[11px] text-[#2A2D37] transition hover:text-[#FFC517]">
+            <a href="https://github.com/zama-ai/fhevm" target="_blank" rel="noopener noreferrer" className="text-[11px] text-[#2a2a2a] transition hover:text-[#FFC517]">
               [github]
             </a>
-            <a href="https://discord.gg/zama" target="_blank" rel="noopener noreferrer" className="text-[11px] text-[#2A2D37] transition hover:text-[#FFC517]">
+            <a href="https://discord.gg/zama" target="_blank" rel="noopener noreferrer" className="text-[11px] text-[#2a2a2a] transition hover:text-[#FFC517]">
               [discord]
             </a>
           </div>

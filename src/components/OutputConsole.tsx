@@ -13,7 +13,7 @@ interface OutputConsoleProps {
 export function OutputConsole({ results, score, maxScore, isRunning }: OutputConsoleProps) {
   if (isRunning) {
     return (
-      <div className="flex h-full items-center justify-center gap-3 bg-[#0A0A0F] text-[#3A3D47]">
+      <div className="flex h-full items-center justify-center gap-3 bg-[#000000] text-[#3A3D47]">
         <span className="text-[12px] animate-pulse">running tests...</span>
       </div>
     );
@@ -21,7 +21,7 @@ export function OutputConsole({ results, score, maxScore, isRunning }: OutputCon
 
   if (!results) {
     return (
-      <div className="flex h-full items-center justify-center bg-[#0A0A0F] text-[#2A2D37]">
+      <div className="flex h-full items-center justify-center bg-[#000000] text-[#2a2a2a]">
         <span className="text-[12px]">&gt; click &quot;run tests&quot; to validate your code</span>
       </div>
     );
@@ -32,9 +32,9 @@ export function OutputConsole({ results, score, maxScore, isRunning }: OutputCon
   const allPassed = passed === total;
 
   return (
-    <div className="flex h-full flex-col bg-[#0A0A0F]">
+    <div className="flex h-full flex-col bg-[#000000]">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-[#1A1D27] px-4 py-2">
+      <div className="flex items-center justify-between border-b border-[#1a1a1a] px-4 py-2">
         <span className="text-[10px] uppercase tracking-widest text-[#3A3D47]">
           test_results
         </span>

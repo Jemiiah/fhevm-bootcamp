@@ -43,7 +43,7 @@ export default function HomeworkPage() {
               {week.homework.description.slice(0, 150)}...
             </p>
 
-            <div className="mt-4 flex items-center justify-between border-t border-[#1A1D27] pt-3 text-[11px] text-[#3A3D47]">
+            <div className="mt-4 flex items-center justify-between border-t border-[#1a1a1a] pt-3 text-[11px] text-[#3A3D47]">
               <div className="flex items-center gap-3">
                 <span className="flex items-center gap-1"><Clock size={9} /> {week.homework.estimatedTime}</span>
                 <span className="text-[#FFC517]/60 font-medium">{week.homework.totalPoints} pts</span>
@@ -72,7 +72,7 @@ export default function HomeworkPage() {
           ].map((g) => (
             <div
               key={g.grade}
-              className="border border-[#1A1D27] bg-[#0F1117] py-4 transition hover:border-[#2A2D37]"
+              className="border border-[#1a1a1a] bg-[#0a0a0a] py-4 transition hover:border-[#2a2a2a]"
             >
               <div className="text-lg font-bold" style={{ color: g.color }}>{g.grade}</div>
               <div className="mt-1 text-[11px] text-[#5A5F73]">{g.range}</div>

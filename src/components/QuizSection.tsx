@@ -105,7 +105,7 @@ export function QuizSection({ quiz, onComplete, completed = false, savedScore }:
 
         <button
           onClick={retakeQuiz}
-          className="flex items-center gap-2 border border-[#1A1D27] bg-[#0F1117] px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#5A5F73] transition hover:border-[#2A2D37] hover:text-[#B8BCC8]"
+          className="flex items-center gap-2 border border-[#1a1a1a] bg-[#0a0a0a] px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#5A5F73] transition hover:border-[#2a2a2a] hover:text-[#B8BCC8]"
         >
           <RotateCcw size={12} />
           retake
@@ -144,7 +144,7 @@ export function QuizSection({ quiz, onComplete, completed = false, savedScore }:
         {question.options.map((opt, i) => {
           const isSelected = selected === i;
           const isCorrect = i === question.correctIndex;
-          let style = "border-[#1A1D27] bg-[#0F1117] text-[#5A5F73] hover:border-[#2A2D37]";
+          let style = "border-[#1a1a1a] bg-[#0a0a0a] text-[#5A5F73] hover:border-[#2a2a2a]";
 
           if (revealed) {
             if (isCorrect) {
@@ -152,7 +152,7 @@ export function QuizSection({ quiz, onComplete, completed = false, savedScore }:
             } else if (isSelected && !isCorrect) {
               style = "border-red-500/30 bg-red-500/5 text-red-400";
             } else {
-              style = "border-[#1A1D27] bg-[#0C0D14] text-[#2A2D37]";
+              style = "border-[#1a1a1a] bg-[#080808] text-[#2a2a2a]";
             }
           } else if (isSelected) {
             style = "border-[#FFC517]/30 bg-[#FFC517]/5 text-[#E8E8ED]";
@@ -165,7 +165,7 @@ export function QuizSection({ quiz, onComplete, completed = false, savedScore }:
               disabled={revealed}
               className={`w-full border px-4 py-3 text-left text-[13px] transition ${style}`}
             >
-              <span className="mr-3 inline-flex h-5 w-5 items-center justify-center border border-[#1A1D27] bg-[#0C0D14] text-[11px] text-[#3A3D47]">
+              <span className="mr-3 inline-flex h-5 w-5 items-center justify-center border border-[#1a1a1a] bg-[#080808] text-[11px] text-[#3A3D47]">
                 {String.fromCharCode(65 + i)}
               </span>
               {opt}
@@ -196,14 +196,14 @@ export function QuizSection({ quiz, onComplete, completed = false, savedScore }:
           <button
             onClick={checkAnswer}
             disabled={selected === null}
-            className="bg-[#FFC517] px-5 py-2 text-[11px] font-bold uppercase tracking-wider text-[#0A0A0F] transition hover:bg-white disabled:opacity-30"
+            className="bg-[#FFC517] px-5 py-2 text-[11px] font-bold uppercase tracking-wider text-[#000000] transition hover:bg-white disabled:opacity-30"
           >
             check
           </button>
         ) : (
           <button
             onClick={nextQuestion}
-            className="flex items-center gap-2 border border-[#1A1D27] bg-[#0F1117] px-5 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#B8BCC8] transition hover:border-[#2A2D37]"
+            className="flex items-center gap-2 border border-[#1a1a1a] bg-[#0a0a0a] px-5 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#B8BCC8] transition hover:border-[#2a2a2a]"
           >
             {currentQ < totalQuestions - 1 ? "next" : "finish"}
             <ArrowRight size={12} />

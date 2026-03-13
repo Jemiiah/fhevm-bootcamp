@@ -65,7 +65,7 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
               )}
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-[9px] uppercase tracking-wider text-[#2A2D37]">{block.language}</span>
+              <span className="text-[9px] uppercase tracking-wider text-[#2a2a2a]">{block.language}</span>
               <CopyButton text={block.body} />
             </div>
           </div>
@@ -127,7 +127,7 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
             {block.items.map((item, i) => (
               <div
                 key={i}
-                className="flex items-start gap-3 border border-[#1A1D27] bg-[#0F1117] px-4 py-3 text-[12px] text-[#5A5F73]"
+                className="flex items-start gap-3 border border-[#1a1a1a] bg-[#0a0a0a] px-4 py-3 text-[12px] text-[#5A5F73]"
               >
                 <span className="text-[#FFC517] shrink-0">{String(i + 1).padStart(2, "0")}.</span>
                 <span dangerouslySetInnerHTML={{ __html: formatMarkdown(item) }} />
@@ -200,9 +200,9 @@ function LessonContent({
       {/* Breadcrumb */}
       <div className="mb-6 animate-fade-in text-[12px] text-[#3A3D47]">
         <Link href="/curriculum" className="transition hover:text-[#5A5F73]">curriculum</Link>
-        <span className="mx-2 text-[#2A2D37]">/</span>
+        <span className="mx-2 text-[#2a2a2a]">/</span>
         <Link href={`/curriculum/week/${weekNumber}`} className="transition hover:text-[#5A5F73]">week_{weekNumber}</Link>
-        <span className="mx-2 text-[#2A2D37]">/</span>
+        <span className="mx-2 text-[#2a2a2a]">/</span>
         <span className="text-[#5A5F73]">lesson_{lessonIndex + 1}</span>
       </div>
 
@@ -228,7 +228,7 @@ function LessonContent({
         <h2 className="section-label mb-3">// LEARNING_OBJECTIVES</h2>
         <div className="space-y-1">
           {lesson.objectives.map((o, i) => (
-            <div key={i} className="flex items-start gap-3 border border-[#1A1D27] bg-[#0F1117] px-4 py-3 text-[13px] text-[#5A5F73]">
+            <div key={i} className="flex items-start gap-3 border border-[#1a1a1a] bg-[#0a0a0a] px-4 py-3 text-[13px] text-[#5A5F73]">
               <span className="text-[#FFC517]">&gt;</span>
               {o}
             </div>
@@ -281,7 +281,7 @@ function LessonContent({
           className={`group flex items-center gap-3 px-5 py-2.5 text-[12px] font-semibold uppercase tracking-wider transition ${
             done
               ? "bg-[#FFC517]/8 text-[#FFC517] border border-[#FFC517]/20"
-              : "bg-[#0F1117] text-[#5A5F73] border border-[#1A1D27] hover:border-[#2A2D37] hover:text-[#B8BCC8]"
+              : "bg-[#0a0a0a] text-[#5A5F73] border border-[#1a1a1a] hover:border-[#2a2a2a] hover:text-[#B8BCC8]"
           }`}
         >
           <Check size={14} className={done ? "" : "opacity-50 transition group-hover:opacity-100"} />
@@ -290,7 +290,7 @@ function LessonContent({
       </div>
 
       {/* Prev/Next navigation */}
-      <div className="mt-10 flex items-center justify-between border-t border-[#1A1D27] pt-6">
+      <div className="mt-10 flex items-center justify-between border-t border-[#1a1a1a] pt-6">
         {prevLesson ? (
           <Link href={`/curriculum/week/${weekNumber}/lesson/${prevLesson.id}`} className="group flex items-center gap-2 text-[12px] text-[#3A3D47] transition hover:text-[#FFC517]">
             <ArrowRight size={12} className="rotate-180 transition group-hover:-translate-x-0.5" />

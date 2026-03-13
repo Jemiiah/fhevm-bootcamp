@@ -60,10 +60,10 @@ export default function CurriculumPage() {
                   return (
                     <div key={lesson.id} className="flex items-center justify-between px-2 py-1.5 text-[12px]">
                       <span className={done ? "text-[#3A3D47] line-through" : "text-[#5A5F73]"}>
-                        <span className="mr-2 text-[#2A2D37]">{String(i + 1).padStart(2, "0")}</span>
+                        <span className="mr-2 text-[#2a2a2a]">{String(i + 1).padStart(2, "0")}</span>
                         {lesson.title}
                       </span>
-                      <span className="flex items-center gap-1 text-[#2A2D37]">
+                      <span className="flex items-center gap-1 text-[#2a2a2a]">
                         <Clock size={9} />
                         {lesson.duration}
                       </span>
@@ -77,7 +77,7 @@ export default function CurriculumPage() {
                 <div className="progress-fill" style={{ width: `${progress}%` }} />
               </div>
 
-              <div className="mt-3 flex items-center justify-between border-t border-[#1A1D27] pt-3">
+              <div className="mt-3 flex items-center justify-between border-t border-[#1a1a1a] pt-3">
                 <span className="text-[11px] text-[#3A3D47]">
                   {week.lessons.length} lessons &middot; {challenges.length} challenges &middot; {week.estimatedTime}
                 </span>

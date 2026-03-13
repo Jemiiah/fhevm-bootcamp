@@ -116,7 +116,7 @@ export default function ResourcesPage() {
               href={d.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between border border-[#1A1D27] bg-[#0F1117] px-5 py-3.5 transition hover:border-[#2A2D37] hover:bg-[#111318]"
+              className="flex items-center justify-between border border-[#1a1a1a] bg-[#0a0a0a] px-5 py-3.5 transition hover:border-[#2a2a2a] hover:bg-[#111318]"
             >
               <div>
                 <span className="text-[13px] font-medium text-[#B8BCC8]">{d.title}</span>

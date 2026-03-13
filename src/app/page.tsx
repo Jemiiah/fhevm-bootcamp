@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { useAuth } from "@/context/AuthContext";
 import { TerminalText } from "@/components/TerminalText";
 
 const weeks = [
@@ -57,8 +56,6 @@ function PipelineArrow() {
 }
 
 export default function Home() {
-  const { user } = useAuth();
-
   return (
     <div className="min-h-screen">
       {/* ── Hero ── */}
@@ -86,10 +83,10 @@ export default function Home() {
 
           <div className="animate-fade-in-up mt-8 flex items-center gap-4" style={{ animationDelay: "0.25s" }}>
             <Link
-              href={user ? "/curriculum" : "/auth"}
+              href="/curriculum"
               className="btn-primary"
             >
-              {user ? "> CONTINUE" : "> START_BOOTCAMP"}
+              {">"} START_BOOTCAMP
               <ArrowRight size={14} />
             </Link>
             <Link href="/resources" className="btn-outline">
@@ -125,7 +122,7 @@ export default function Home() {
       </section>
 
       {/* ── Pipeline Strip ── */}
-      <section className="border-t border-b border-[#1A1D27] py-6 px-6 overflow-x-auto">
+      <section className="border-t border-b border-[#1a1a1a] py-6 px-6 overflow-x-auto">
         <div className="flex items-center justify-center gap-0 min-w-max">
           {PIPELINE.map((step, i) => (
             <div key={i} className="flex items-center">
@@ -133,7 +130,7 @@ export default function Home() {
               <span className={`px-3 py-1.5 text-[11px] border whitespace-nowrap ${
                 step.type === "op"
                   ? "border-[#FFC517]/20 bg-[#FFC517]/6 text-[#FFC517]"
-                  : "border-[#1A1D27] bg-[#0F1117] text-[#5A5F73]"
+                  : "border-[#1a1a1a] bg-[#0a0a0a] text-[#5A5F73]"
               }`}>
                 {step.label}
               </span>
@@ -163,7 +160,7 @@ export default function Home() {
           {weeks.map((w) => (
             <Link
               key={w.n}
-              href={user ? `/curriculum/week/${w.n}` : "/auth"}
+              href={`/curriculum/week/${w.n}`}
               className="t-card group flex flex-col"
             >
               <span className="text-2xl font-light text-[#FFC517] leading-none mb-3">
@@ -173,7 +170,7 @@ export default function Home() {
                 {w.title}
               </h3>
               <p className="mt-2 flex-1 text-[13px] text-[#5A5F73]">{w.desc}</p>
-              <div className="mt-4 flex items-center justify-between border-t border-[#1A1D27] pt-3 text-[11px] text-[#3A3D47]">
+              <div className="mt-4 flex items-center justify-between border-t border-[#1a1a1a] pt-3 text-[11px] text-[#3A3D47]">
                 <span>{w.lessons} lessons &middot; {w.hours}</span>
                 <ArrowRight size={12} className="text-[#3A3D47] transition group-hover:translate-x-1 group-hover:text-[#FFC517]" />
               </div>
@@ -199,8 +196,8 @@ export default function Home() {
           confidential contract in under an hour.
         </p>
         <div className="mt-8 flex items-center gap-4">
-          <Link href={user ? "/curriculum/week/1" : "/auth"} className="btn-primary">
-            {user ? "> BEGIN_WEEK_1" : "> CREATE_ACCOUNT"}
+          <Link href="/curriculum/week/1" className="btn-primary">
+            {">"} BEGIN_WEEK_1
             <ArrowRight size={14} />
           </Link>
           <a

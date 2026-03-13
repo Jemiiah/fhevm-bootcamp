@@ -91,7 +91,7 @@ export default function InstructorPage() {
               </h3>
               <div className="space-y-1">
                 {week.instructorNotes.map((note, i) => (
-                  <div key={i} className="flex items-start gap-3 border border-[#1A1D27] bg-[#0C0D14] px-4 py-2.5 text-[12px] text-[#5A5F73]">
+                  <div key={i} className="flex items-start gap-3 border border-[#1a1a1a] bg-[#080808] px-4 py-2.5 text-[12px] text-[#5A5F73]">
                     <span className="text-[#3A3D47]">{String(i + 1).padStart(2, "0")}.</span>
                     {note}
                   </div>
@@ -121,7 +121,7 @@ export default function InstructorPage() {
         <div className="t-card !p-0 overflow-hidden">
           <table className="w-full text-[12px]">
             <thead>
-              <tr className="border-b border-[#1A1D27] text-[#3A3D47]">
+              <tr className="border-b border-[#1a1a1a] text-[#3A3D47]">
                 <th className="px-5 py-3 text-left text-[10px] uppercase tracking-widest font-semibold">Week</th>
                 <th className="px-5 py-3 text-left text-[10px] uppercase tracking-widest font-semibold">Focus</th>
                 <th className="px-5 py-3 text-left text-[10px] uppercase tracking-widest font-semibold">Hours</th>
@@ -135,7 +135,7 @@ export default function InstructorPage() {
                 { w: 3, focus: "Applications", hours: "14-16", challenge: "Full app architecture" },
                 { w: 4, focus: "Capstone", hours: "16-20", challenge: "Scoping and time management" },
               ].map((row) => (
-                <tr key={row.w} className="border-b border-[#1A1D27]">
+                <tr key={row.w} className="border-b border-[#1a1a1a]">
                   <td className="px-5 py-3 text-[#FFC517]">{String(row.w).padStart(2, "0")}</td>
                   <td className="px-5 py-3 text-[#B8BCC8]">{row.focus}</td>
                   <td className="px-5 py-3 text-[#5A5F73]">{row.hours}h</td>
@@ -162,7 +162,7 @@ export default function InstructorPage() {
               <span className="text-[12px] text-[#5A5F73]">
                 <span className="text-[#FFC517]">{String(i + 1).padStart(2, "0")}.</span> {s.step}
               </span>
-              <pre className="mt-1 !border-[#1A1D27] !bg-[#0C0D14] px-4 py-2 text-[11px] text-[#3A3D47]">
+              <pre className="mt-1 !border-[#1a1a1a] !bg-[#080808] px-4 py-2 text-[11px] text-[#3A3D47]">
                 <code>{s.cmd}</code>
               </pre>
             </div>
@@ -180,7 +180,7 @@ export default function InstructorPage() {
             "Min test coverage: 5 tests for weeks 1-2, 10 for week 3, 15 for capstone.",
             "For capstone: weight originality and ambition alongside correctness.",
           ].map((tip, i) => (
-            <div key={i} className="flex items-start gap-3 border border-[#1A1D27] bg-[#0C0D14] px-4 py-3 text-[12px] text-[#5A5F73]">
+            <div key={i} className="flex items-start gap-3 border border-[#1a1a1a] bg-[#080808] px-4 py-3 text-[12px] text-[#5A5F73]">
               <span className="text-[#FFC517]">&gt;</span>
               {tip}
             </div>
