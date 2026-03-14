@@ -4,6 +4,8 @@ A comprehensive 4-week developer bootcamp for mastering **Fully Homomorphic Encr
 
 **Live Site:** _Coming soon_
 
+![FHEVM Bootcamp — Hero](docs/screenshots/hero.png)
+
 ---
 
 ## Table of Contents
@@ -150,6 +152,8 @@ fhevm-bootcamp/
 
 ## Curriculum
 
+![Curriculum Overview](docs/screenshots/curriculum.png)
+
 ### Week 1 — Foundations of FHE & FHEVM
 
 | # | Lesson | Topics |
@@ -209,22 +213,17 @@ A Rustfinity-style split-pane coding environment with:
 - **Reference solutions** with reveal/hide toggle
 - **17 challenges** ranging from Starter to Hard difficulty across all 4 weeks
 
-### Rich Lesson Content
+![Challenge Editor](docs/screenshots/challenge-editor.png)
 
-Each lesson features:
+### Lessons & Quizzes
 
-- **Formatted text** with inline code highlighting and bold emphasis
-- **Code examples** with filename labels, syntax highlighting, and copy-to-clipboard buttons
-- **KEY INSIGHT callouts** (yellow accent) for critical concepts
-- **Warning blocks** (red accent) for common pitfalls
-- **Info notes** (blue accent) for supplementary context
-- **Numbered lists** for step-by-step procedures
-
-### Quizzes
+Each lesson features rich content blocks — formatted text, code examples with copy buttons, KEY INSIGHT callouts, warning blocks, and info notes. Every lesson ends with an interactive quiz for knowledge checks.
 
 - 18 interactive quizzes with multiple-choice questions
 - Immediate feedback with correct/incorrect indicators
 - Score tracking and explanations for each answer
+
+![Lesson Content & Quiz](docs/screenshots/quiz.png)
 
 ### Progress Tracking
 
