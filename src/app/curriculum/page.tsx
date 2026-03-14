@@ -13,8 +13,8 @@ export default function CurriculumPage() {
     <div className="mx-auto min-h-screen max-w-5xl px-6 pt-24 pb-20">
       <div className="mb-10 animate-fade-in-up">
         <span className="section-label">// CURRICULUM</span>
-        <h1 className="mt-3 text-2xl font-bold text-[#E8E8ED] md:text-3xl">Learning Tracks</h1>
-        <p className="mt-2 text-[13px] text-[#5A5F73]">
+        <h1 className="mt-3 text-2xl font-bold text-[#FFFFFF] md:text-3xl">Learning Tracks</h1>
+        <p className="mt-2 text-[13px] text-[#C8C8C8]">
           16 lessons across 4 weeks — from FHE fundamentals to production dApps.
         </p>
       </div>
@@ -47,10 +47,10 @@ export default function CurriculumPage() {
                 </div>
               </div>
 
-              <h2 className="text-[16px] font-semibold text-[#E8E8ED] transition group-hover:text-[#FFC517]">
+              <h2 className="text-[16px] font-semibold text-[#FFFFFF] transition group-hover:text-[#FFC517]">
                 {week.title}
               </h2>
-              <p className="mt-2 text-[13px] text-[#5A5F73]">
+              <p className="mt-2 text-[13px] text-[#C8C8C8]">
                 {week.subtitle}
               </p>
 
@@ -59,11 +59,11 @@ export default function CurriculumPage() {
                   const done = isCompleted(lesson.id);
                   return (
                     <div key={lesson.id} className="flex items-center justify-between px-2 py-1.5 text-[12px]">
-                      <span className={done ? "text-[#3A3D47] line-through" : "text-[#5A5F73]"}>
-                        <span className="mr-2 text-[#2a2a2a]">{String(i + 1).padStart(2, "0")}</span>
+                      <span className={done ? "text-[#808080] line-through" : "text-[#C8C8C8]"}>
+                        <span className="mr-2 text-[#5A5A5A]">{String(i + 1).padStart(2, "0")}</span>
                         {lesson.title}
                       </span>
-                      <span className="flex items-center gap-1 text-[#2a2a2a]">
+                      <span className="flex items-center gap-1 text-[#5A5A5A]">
                         <Clock size={9} />
                         {lesson.duration}
                       </span>
@@ -78,10 +78,10 @@ export default function CurriculumPage() {
               </div>
 
               <div className="mt-3 flex items-center justify-between border-t border-[#1a1a1a] pt-3">
-                <span className="text-[11px] text-[#3A3D47]">
+                <span className="text-[11px] text-[#808080]">
                   {week.lessons.length} lessons &middot; {challenges.length} challenges &middot; {week.estimatedTime}
                 </span>
-                <ArrowRight size={12} className="text-[#3A3D47] transition-all group-hover:translate-x-1 group-hover:text-[#FFC517]" />
+                <ArrowRight size={12} className="text-[#808080] transition-all group-hover:translate-x-1 group-hover:text-[#FFC517]" />
               </div>
             </Link>
           );

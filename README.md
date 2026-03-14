@@ -249,15 +249,16 @@ Each lesson features rich content blocks — formatted text, code examples with 
 
 | Token | Hex | Usage |
 |-------|-----|-------|
-| Base | `#000000` | Page background |
-| Surface | `#0a0a0a` | Cards, panels |
-| Surface Alt | `#080808` | Headers, titlebars |
+| Base | `#0A0A0A` | Page background |
+| Surface | `#111111` | Cards, panels |
+| Surface Alt | `#0D0D0D` | Headers, titlebars |
 | Border | `#1a1a1a` | Borders, dividers |
 | Border Hover | `#2a2a2a` | Hover states |
-| Text Primary | `#E8E8ED` | Headings |
-| Text Secondary | `#B8BCC8` | Body text |
-| Text Muted | `#5A5F73` | Descriptions |
-| Text Ghost | `#3A3D47` | Hints, labels |
+| Text Primary | `#FFFFFF` | Headings |
+| Text Body | `#E0E0E0` | Body text |
+| Text Content | `#C8C8C8` | Descriptions, lesson content |
+| Text Meta | `#808080` | Labels, timestamps |
+| Text Subtle | `#5A5A5A` | Hints, decorative |
 | Accent | `#FFC517` | Zama yellow — CTAs, highlights, active states |
 | Cyan | `#00D4AA` | FHE function calls in editor |
 | Red | `#FF4444` | Errors, warnings |

@@ -26,7 +26,7 @@ function CopyButton({ text }: { text: string }) {
         setCopied(true);
         setTimeout(() => setCopied(false), 2000);
       }}
-      className="flex items-center gap-1 px-2 py-1 text-[10px] text-[#3A3D47] transition hover:text-[#FFC517]"
+      className="flex items-center gap-1 px-2 py-1 text-[10px] text-[#808080] transition hover:text-[#FFC517]"
     >
       {copied ? <CheckCheck size={10} /> : <Copy size={10} />}
       {copied ? "copied" : "copy"}
@@ -36,7 +36,7 @@ function CopyButton({ text }: { text: string }) {
 
 function formatMarkdown(text: string): string {
   return text
-    .replace(/\*\*(.*?)\*\*/g, '<strong class="text-[#B8BCC8] font-semibold">$1</strong>')
+    .replace(/\*\*(.*?)\*\*/g, '<strong class="text-[#FFFFFF] font-semibold">$1</strong>')
     .replace(/`(.*?)`/g, '<code>$1</code>')
     .replace(/\n\n/g, '</p><p class="mt-3">')
     .replace(/\n/g, "<br/>");
@@ -47,7 +47,7 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
     case "text":
       return (
         <div
-          className="text-[13px] leading-[1.85] text-[#5A5F73]"
+          className="text-[13px] leading-[1.85] text-[#C8C8C8]"
           dangerouslySetInnerHTML={{ __html: formatMarkdown(block.body) }}
         />
       );
@@ -61,15 +61,15 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
               <span className="t-dot yellow" />
               <span className="t-dot green" />
               {block.filename && (
-                <span className="ml-2 text-[10px] text-[#3A3D47]">{block.filename}</span>
+                <span className="ml-2 text-[10px] text-[#808080]">{block.filename}</span>
               )}
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-[9px] uppercase tracking-wider text-[#2a2a2a]">{block.language}</span>
+              <span className="text-[9px] uppercase tracking-wider text-[#5A5A5A]">{block.language}</span>
               <CopyButton text={block.body} />
             </div>
           </div>
-          <pre className="!border-0 !bg-transparent p-4 text-[12px] leading-[1.8] text-[#5A5F73] overflow-x-auto">
+          <pre className="!border-0 !bg-transparent p-4 text-[12px] leading-[1.8] text-[#C8C8C8] overflow-x-auto">
             <code>{block.body}</code>
           </pre>
         </div>
@@ -83,7 +83,7 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
             {block.title}
           </div>
           <div
-            className="text-[12px] leading-[1.8] text-[#5A5F73]"
+            className="text-[12px] leading-[1.8] text-[#C8C8C8]"
             dangerouslySetInnerHTML={{ __html: formatMarkdown(block.body) }}
           />
         </div>
@@ -97,7 +97,7 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
             {block.title || "WARNING"}
           </div>
           <div
-            className="text-[12px] leading-[1.8] text-[#5A5F73]"
+            className="text-[12px] leading-[1.8] text-[#C8C8C8]"
             dangerouslySetInnerHTML={{ __html: formatMarkdown(block.body) }}
           />
         </div>
@@ -111,7 +111,7 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
             NOTE
           </div>
           <div
-            className="text-[12px] leading-[1.8] text-[#5A5F73]"
+            className="text-[12px] leading-[1.8] text-[#C8C8C8]"
             dangerouslySetInnerHTML={{ __html: formatMarkdown(block.body) }}
           />
         </div>
@@ -120,14 +120,14 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
     case "list":
       return (
         <div>
-          <h3 className="mb-3 text-[12px] font-bold uppercase tracking-wider text-[#B8BCC8]">
+          <h3 className="mb-3 text-[12px] font-bold uppercase tracking-wider text-[#E0E0E0]">
             {block.title}
           </h3>
           <div className="space-y-1">
             {block.items.map((item, i) => (
               <div
                 key={i}
-                className="flex items-start gap-3 border border-[#1a1a1a] bg-[#0a0a0a] px-4 py-3 text-[12px] text-[#5A5F73]"
+                className="flex items-start gap-3 border border-[#1a1a1a] bg-[#111111] px-4 py-3 text-[12px] text-[#C8C8C8]"
               >
                 <span className="text-[#FFC517] shrink-0">{String(i + 1).padStart(2, "0")}.</span>
                 <span dangerouslySetInnerHTML={{ __html: formatMarkdown(item) }} />
@@ -151,8 +151,8 @@ export default function LessonPage() {
   if (!result || !week) {
     return (
       <div className="mx-auto max-w-4xl px-6 pt-24 pb-20 text-center">
-        <h1 className="text-xl font-bold text-[#E8E8ED]">Lesson not found</h1>
-        <Link href={`/curriculum/week/${weekNumber}`} className="mt-4 inline-block text-[13px] text-[#3A3D47] hover:text-[#FFC517]">
+        <h1 className="text-xl font-bold text-[#FFFFFF]">Lesson not found</h1>
+        <Link href={`/curriculum/week/${weekNumber}`} className="mt-4 inline-block text-[13px] text-[#808080] hover:text-[#FFC517]">
           &larr; back to week_{weekNumber}
         </Link>
       </div>
@@ -198,12 +198,12 @@ function LessonContent({
   return (
     <div className="mx-auto max-w-4xl px-6 pt-24 pb-20">
       {/* Breadcrumb */}
-      <div className="mb-6 animate-fade-in text-[12px] text-[#3A3D47]">
-        <Link href="/curriculum" className="transition hover:text-[#5A5F73]">curriculum</Link>
-        <span className="mx-2 text-[#2a2a2a]">/</span>
-        <Link href={`/curriculum/week/${weekNumber}`} className="transition hover:text-[#5A5F73]">week_{weekNumber}</Link>
-        <span className="mx-2 text-[#2a2a2a]">/</span>
-        <span className="text-[#5A5F73]">lesson_{lessonIndex + 1}</span>
+      <div className="mb-6 animate-fade-in text-[12px] text-[#808080]">
+        <Link href="/curriculum" className="transition hover:text-[#C8C8C8]">curriculum</Link>
+        <span className="mx-2 text-[#5A5A5A]">/</span>
+        <Link href={`/curriculum/week/${weekNumber}`} className="transition hover:text-[#C8C8C8]">week_{weekNumber}</Link>
+        <span className="mx-2 text-[#5A5A5A]">/</span>
+        <span className="text-[#C8C8C8]">lesson_{lessonIndex + 1}</span>
       </div>
 
       {/* Header */}
@@ -218,7 +218,7 @@ function LessonContent({
             </span>
           )}
         </div>
-        <h1 className="text-2xl font-bold text-[#E8E8ED] md:text-3xl">
+        <h1 className="text-2xl font-bold text-[#FFFFFF] md:text-3xl">
           {String(lessonIndex + 1).padStart(2, "0")}. {lesson.title}
         </h1>
       </div>
@@ -228,7 +228,7 @@ function LessonContent({
         <h2 className="section-label mb-3">// LEARNING_OBJECTIVES</h2>
         <div className="space-y-1">
           {lesson.objectives.map((o, i) => (
-            <div key={i} className="flex items-start gap-3 border border-[#1a1a1a] bg-[#0a0a0a] px-4 py-3 text-[13px] text-[#5A5F73]">
+            <div key={i} className="flex items-start gap-3 border border-[#1a1a1a] bg-[#111111] px-4 py-3 text-[13px] text-[#C8C8C8]">
               <span className="text-[#FFC517]">&gt;</span>
               {o}
             </div>
@@ -247,7 +247,7 @@ function LessonContent({
       ) : (
         <>
           {/* Fallback for lessons without rich content */}
-          <p className="mb-8 animate-fade-in-up text-[14px] leading-[1.75] text-[#5A5F73]" style={{ animationDelay: "0.15s" }}>
+          <p className="mb-8 animate-fade-in-up text-[14px] leading-[1.75] text-[#C8C8C8]" style={{ animationDelay: "0.15s" }}>
             {lesson.description}
           </p>
           <div className="mb-8 animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
@@ -281,7 +281,7 @@ function LessonContent({
           className={`group flex items-center gap-3 px-5 py-2.5 text-[12px] font-semibold uppercase tracking-wider transition ${
             done
               ? "bg-[#FFC517]/8 text-[#FFC517] border border-[#FFC517]/20"
-              : "bg-[#0a0a0a] text-[#5A5F73] border border-[#1a1a1a] hover:border-[#2a2a2a] hover:text-[#B8BCC8]"
+              : "bg-[#111111] text-[#C8C8C8] border border-[#1a1a1a] hover:border-[#2a2a2a] hover:text-[#E0E0E0]"
           }`}
         >
           <Check size={14} className={done ? "" : "opacity-50 transition group-hover:opacity-100"} />
@@ -292,23 +292,23 @@ function LessonContent({
       {/* Prev/Next navigation */}
       <div className="mt-10 flex items-center justify-between border-t border-[#1a1a1a] pt-6">
         {prevLesson ? (
-          <Link href={`/curriculum/week/${weekNumber}/lesson/${prevLesson.id}`} className="group flex items-center gap-2 text-[12px] text-[#3A3D47] transition hover:text-[#FFC517]">
+          <Link href={`/curriculum/week/${weekNumber}/lesson/${prevLesson.id}`} className="group flex items-center gap-2 text-[12px] text-[#808080] transition hover:text-[#FFC517]">
             <ArrowRight size={12} className="rotate-180 transition group-hover:-translate-x-0.5" />
             <span className="max-w-[180px] truncate">{prevLesson.title}</span>
           </Link>
         ) : (
-          <Link href={`/curriculum/week/${weekNumber}`} className="group flex items-center gap-2 text-[12px] text-[#3A3D47] transition hover:text-[#FFC517]">
+          <Link href={`/curriculum/week/${weekNumber}`} className="group flex items-center gap-2 text-[12px] text-[#808080] transition hover:text-[#FFC517]">
             <ArrowRight size={12} className="rotate-180 transition group-hover:-translate-x-0.5" />
             week_overview
           </Link>
         )}
         {nextLesson ? (
-          <Link href={`/curriculum/week/${weekNumber}/lesson/${nextLesson.id}`} className="group flex items-center gap-2 text-[12px] text-[#3A3D47] transition hover:text-[#FFC517]">
+          <Link href={`/curriculum/week/${weekNumber}/lesson/${nextLesson.id}`} className="group flex items-center gap-2 text-[12px] text-[#808080] transition hover:text-[#FFC517]">
             <span className="max-w-[180px] truncate">{nextLesson.title}</span>
             <ArrowRight size={12} className="transition group-hover:translate-x-0.5" />
           </Link>
         ) : (
-          <Link href={`/curriculum/week/${weekNumber}/assignment`} className="group flex items-center gap-2 text-[12px] text-[#3A3D47] transition hover:text-[#FFC517]">
+          <Link href={`/curriculum/week/${weekNumber}/assignment`} className="group flex items-center gap-2 text-[12px] text-[#808080] transition hover:text-[#FFC517]">
             assignment
             <ArrowRight size={12} className="transition group-hover:translate-x-0.5" />
           </Link>

@@ -14,8 +14,8 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background: #000000;
-  color: #B8BCC8;
+  background: #0A0A0A;
+  color: #E0E0E0;
   font-family: var(--font-mono), monospace;
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
@@ -61,7 +61,7 @@ body::before {
 
 /* ─── Terminal Card ─── */
 .t-card {
-  background: #0a0a0a;
+  background: #111111;
   border: 1px solid #1a1a1a;
   padding: 1.25rem;
   position: relative;
@@ -74,7 +74,7 @@ body::before {
 
 /* Terminal card with header bar */
 .t-card-window {
-  background: #0a0a0a;
+  background: #111111;
   border: 1px solid #1a1a1a;
   overflow: hidden;
 }
@@ -85,7 +85,7 @@ body::before {
   gap: 6px;
   padding: 10px 14px;
   border-bottom: 1px solid #1a1a1a;
-  background: #080808;
+  background: #0D0D0D;
 }
 
 .t-card-window .t-dot {
@@ -116,8 +116,8 @@ body::before {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   border: 1px solid #1a1a1a;
-  background: #0a0a0a;
-  color: #5A5F73;
+  background: #111111;
+  color: #808080;
   transition: all 0.2s;
 }
 
@@ -157,7 +157,7 @@ body::before {
   gap: 0.5rem;
   padding: 0.625rem 1.5rem;
   background: transparent;
-  color: #5A5F73;
+  color: #808080;
   font-size: 0.8rem;
   font-weight: 600;
   font-family: var(--font-mono);
@@ -174,7 +174,7 @@ body::before {
 
 /* ─── Code ─── */
 pre {
-  background: #050505 !important;
+  background: #0A0A0A !important;
   border: 1px solid #1a1a1a;
   padding: 1.25rem;
   overflow-x: auto;
@@ -279,5 +279,5 @@ button:focus-visible, a:focus-visible, input:focus-visible {
 
 /* ─── Text colors ─── */
 .text-green { color: #FFC517; }
-.text-dim { color: #5A5F73; }
-.text-ghost { color: #3A3D47; }
+.text-dim { color: #999999; }
+.text-ghost { color: #666666; }

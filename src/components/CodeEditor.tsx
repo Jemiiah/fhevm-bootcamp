@@ -94,28 +94,28 @@ export function CodeEditor({ value, onChange, readOnly = false, height = "100%" 
         { token: "keyword", foreground: "C586C0" },
         { token: "fhevm-type", foreground: "FFC517", fontStyle: "bold" },
         { token: "fhevm-call", foreground: "00D4AA", fontStyle: "bold" },
-        { token: "comment", foreground: "3A3D47" },
+        { token: "comment", foreground: "606060" },
         { token: "string", foreground: "CE9178" },
         { token: "number", foreground: "B5CEA8" },
-        { token: "operator", foreground: "B8BCC8" },
+        { token: "operator", foreground: "E0E0E0" },
         { token: "identifier", foreground: "9CDCFE" },
       ],
       colors: {
-        "editor.background": "#000000",
-        "editor.foreground": "#B8BCC8",
-        "editor.lineHighlightBackground": "#0a0a0a",
+        "editor.background": "#0A0A0A",
+        "editor.foreground": "#E0E0E0",
+        "editor.lineHighlightBackground": "#111111",
         "editor.selectionBackground": "#FFC51720",
         "editor.inactiveSelectionBackground": "#FFC51710",
-        "editorLineNumber.foreground": "#2a2a2a",
-        "editorLineNumber.activeForeground": "#5A5F73",
+        "editorLineNumber.foreground": "#5A5A5A",
+        "editorLineNumber.activeForeground": "#C8C8C8",
         "editorCursor.foreground": "#FFC517",
         "editor.selectionHighlightBackground": "#FFC51715",
         "editorBracketMatch.background": "#FFC51720",
         "editorBracketMatch.border": "#FFC51750",
         "editorIndentGuide.background": "#1a1a1a",
-        "editorWidget.background": "#0a0a0a",
+        "editorWidget.background": "#111111",
         "editorWidget.border": "#1a1a1a",
-        "input.background": "#0a0a0a",
+        "input.background": "#111111",
         "input.border": "#1a1a1a",
         "scrollbarSlider.background": "#1a1a1a80",
         "scrollbarSlider.hoverBackground": "#2a2a2a80",
@@ -152,8 +152,8 @@ export function CodeEditor({ value, onChange, readOnly = false, height = "100%" 
       onChange={(v) => onChange(v ?? "")}
       onMount={handleMount}
       loading={
-        <div className="flex h-full items-center justify-center bg-[#000000]">
-          <span className="text-[12px] text-[#3A3D47] animate-pulse">loading editor...</span>
+        <div className="flex h-full items-center justify-center bg-[#0A0A0A]">
+          <span className="text-[12px] text-[#808080] animate-pulse">loading editor...</span>
         </div>
       }
       options={{

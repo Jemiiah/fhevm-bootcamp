@@ -19,10 +19,10 @@ export function WeekDetail({ week }: { week: Week }) {
   return (
     <div className="mx-auto max-w-4xl px-6 pt-24 pb-20">
       {/* Breadcrumb */}
-      <div className="mb-6 animate-fade-in text-[12px] text-[#3A3D47]">
-        <Link href="/curriculum" className="transition hover:text-[#5A5F73]">curriculum</Link>
-        <span className="mx-2 text-[#2a2a2a]">/</span>
-        <span className="text-[#5A5F73]">week_{week.number}</span>
+      <div className="mb-6 animate-fade-in text-[12px] text-[#808080]">
+        <Link href="/curriculum" className="transition hover:text-[#C8C8C8]">curriculum</Link>
+        <span className="mx-2 text-[#5A5A5A]">/</span>
+        <span className="text-[#C8C8C8]">week_{week.number}</span>
       </div>
 
       {/* Header */}
@@ -33,19 +33,19 @@ export function WeekDetail({ week }: { week: Week }) {
           </span>
           <span className="tag">{week.estimatedTime}</span>
         </div>
-        <h1 className="text-2xl font-bold text-[#E8E8ED] md:text-3xl">{week.title}</h1>
-        <p className="mt-1 text-[14px] text-[#5A5F73]">{week.subtitle}</p>
+        <h1 className="text-2xl font-bold text-[#FFFFFF] md:text-3xl">{week.title}</h1>
+        <p className="mt-1 text-[14px] text-[#C8C8C8]">{week.subtitle}</p>
 
         {/* Progress */}
         <div className="mt-6 flex items-center gap-4">
           <div className="progress-track flex-1">
             <div className="progress-fill" style={{ width: `${progress}%` }} />
           </div>
-          <span className={`text-[13px] font-semibold tabular-nums ${progress === 100 ? "text-[#FFC517]" : "text-[#5A5F73]"}`}>
+          <span className={`text-[13px] font-semibold tabular-nums ${progress === 100 ? "text-[#FFC517]" : "text-[#C8C8C8]"}`}>
             {progress}%
           </span>
         </div>
-        <div className="mt-2 flex gap-4 text-[11px] text-[#3A3D47]">
+        <div className="mt-2 flex gap-4 text-[11px] text-[#808080]">
           <span>{completedItems}/{totalItems} completed</span>
           <span>{week.lessons.length} lessons</span>
           <span>{challenges.length} challenges</span>
@@ -57,7 +57,7 @@ export function WeekDetail({ week }: { week: Week }) {
         <h2 className="section-label mb-4">// OBJECTIVES</h2>
         <div className="grid gap-2 sm:grid-cols-2">
           {week.learningObjectives.map((obj, i) => (
-            <div key={i} className="flex gap-2.5 text-[12px] text-[#5A5F73]">
+            <div key={i} className="flex gap-2.5 text-[12px] text-[#C8C8C8]">
               <span className="mt-1 text-[#FFC517]">&gt;</span>
               {obj}
             </div>
@@ -80,18 +80,18 @@ export function WeekDetail({ week }: { week: Week }) {
                 <span className={`flex h-6 w-6 shrink-0 items-center justify-center border text-[11px] ${
                   done
                     ? "border-[#FFC517]/30 bg-[#FFC517]/8 text-[#FFC517]"
-                    : "border-[#1a1a1a] text-[#2a2a2a] group-hover:border-[#2a2a2a]"
+                    : "border-[#1a1a1a] text-[#5A5A5A] group-hover:border-[#2a2a2a]"
                 }`}>
                   {done ? <Check size={12} /> : String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className={`flex-1 text-[13px] font-medium truncate ${done ? "text-[#3A3D47]" : "text-[#B8BCC8]"}`}>
+                <h3 className={`flex-1 text-[13px] font-medium truncate ${done ? "text-[#808080]" : "text-[#E0E0E0]"}`}>
                   {lesson.title}
                 </h3>
-                <span className="flex items-center gap-1 text-[11px] text-[#3A3D47]">
+                <span className="flex items-center gap-1 text-[11px] text-[#808080]">
                   <Clock size={10} />
                   {lesson.duration}
                 </span>
-                <ArrowRight size={12} className="text-[#2a2a2a] transition group-hover:translate-x-0.5 group-hover:text-[#FFC517]" />
+                <ArrowRight size={12} className="text-[#5A5A5A] transition group-hover:translate-x-0.5 group-hover:text-[#FFC517]" />
               </Link>
             );
           })}
@@ -114,11 +114,11 @@ export function WeekDetail({ week }: { week: Week }) {
                   <span className={`flex h-6 w-6 shrink-0 items-center justify-center border text-[11px] ${
                     done
                       ? "border-[#FFC517]/30 bg-[#FFC517]/8 text-[#FFC517]"
-                      : "border-[#1a1a1a] text-[#2a2a2a] group-hover:border-[#2a2a2a]"
+                      : "border-[#1a1a1a] text-[#5A5A5A] group-hover:border-[#2a2a2a]"
                   }`}>
                     {done ? <Check size={12} /> : <Play size={10} />}
                   </span>
-                  <h3 className={`flex-1 text-[13px] font-medium truncate ${done ? "text-[#3A3D47]" : "text-[#B8BCC8]"}`}>
+                  <h3 className={`flex-1 text-[13px] font-medium truncate ${done ? "text-[#808080]" : "text-[#E0E0E0]"}`}>
                     {ch.title}
                   </h3>
                   <span className={`tag text-[10px] ${
@@ -129,7 +129,7 @@ export function WeekDetail({ week }: { week: Week }) {
                   }`}>
                     {ch.difficulty}
                   </span>
-                  <ArrowRight size={12} className="text-[#2a2a2a] transition group-hover:translate-x-0.5 group-hover:text-[#FFC517]" />
+                  <ArrowRight size={12} className="text-[#5A5A5A] transition group-hover:translate-x-0.5 group-hover:text-[#FFC517]" />
                 </Link>
               );
             })}
@@ -148,14 +148,14 @@ export function WeekDetail({ week }: { week: Week }) {
             HW
           </span>
           <div className="flex-1">
-            <h3 className="text-[14px] font-semibold text-[#E8E8ED] group-hover:text-[#FFC517]">{week.homework.title}</h3>
-            <div className="mt-1 flex gap-3 text-[11px] text-[#3A3D47]">
+            <h3 className="text-[14px] font-semibold text-[#FFFFFF] group-hover:text-[#FFC517]">{week.homework.title}</h3>
+            <div className="mt-1 flex gap-3 text-[11px] text-[#808080]">
               <span className="tag text-[10px]">{week.homework.difficulty}</span>
               <span>{week.homework.estimatedTime}</span>
               <span className="text-[#FFC517]/60">{week.homework.totalPoints} pts</span>
             </div>
           </div>
-          <ArrowRight size={14} className="text-[#3A3D47] transition group-hover:translate-x-1 group-hover:text-[#FFC517]" />
+          <ArrowRight size={14} className="text-[#808080] transition group-hover:translate-x-1 group-hover:text-[#FFC517]" />
         </Link>
       </div>
 
@@ -163,7 +163,7 @@ export function WeekDetail({ week }: { week: Week }) {
       <div className="mb-8 animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
         <button
           onClick={() => setNotesOpen(!notesOpen)}
-          className="flex items-center gap-2 text-[11px] uppercase tracking-widest text-[#3A3D47] transition hover:text-[#5A5F73]"
+          className="flex items-center gap-2 text-[11px] uppercase tracking-widest text-[#808080] transition hover:text-[#C8C8C8]"
         >
           // teaching_notes
           <ChevronDown size={12} className={`transition-transform ${notesOpen ? "rotate-180" : ""}`} />
@@ -171,8 +171,8 @@ export function WeekDetail({ week }: { week: Week }) {
         <div className={`overflow-hidden transition-all duration-300 ${notesOpen ? "mt-3 max-h-[2000px] opacity-100" : "max-h-0 opacity-0"}`}>
           <div className="space-y-1">
             {week.instructorNotes.map((note, i) => (
-              <div key={i} className="flex items-start gap-3 border border-[#1a1a1a] bg-[#0a0a0a] px-4 py-3 text-[12px] text-[#5A5F73]">
-                <span className="text-[#3A3D47]">{String(i + 1).padStart(2, "0")}.</span>
+              <div key={i} className="flex items-start gap-3 border border-[#1a1a1a] bg-[#111111] px-4 py-3 text-[12px] text-[#C8C8C8]">
+                <span className="text-[#808080]">{String(i + 1).padStart(2, "0")}.</span>
                 {note}
               </div>
             ))}
@@ -183,7 +183,7 @@ export function WeekDetail({ week }: { week: Week }) {
       {/* Week nav */}
       <div className="flex items-center justify-between border-t border-[#1a1a1a] pt-6">
         {week.number > 1 ? (
-          <Link href={`/curriculum/week/${week.number - 1}`} className="group flex items-center gap-2 text-[13px] text-[#3A3D47] transition hover:text-[#FFC517]">
+          <Link href={`/curriculum/week/${week.number - 1}`} className="group flex items-center gap-2 text-[13px] text-[#808080] transition hover:text-[#FFC517]">
             <ArrowRight size={12} className="rotate-180 transition group-hover:-translate-x-0.5" />
             week_{week.number - 1}
           </Link>
@@ -192,7 +192,7 @@ export function WeekDetail({ week }: { week: Week }) {
           all_tracks
         </Link>
         {week.number < 4 ? (
-          <Link href={`/curriculum/week/${week.number + 1}`} className="group flex items-center gap-2 text-[13px] text-[#3A3D47] transition hover:text-[#FFC517]">
+          <Link href={`/curriculum/week/${week.number + 1}`} className="group flex items-center gap-2 text-[13px] text-[#808080] transition hover:text-[#FFC517]">
             week_{week.number + 1}
             <ArrowRight size={12} className="transition group-hover:translate-x-0.5" />
           </Link>

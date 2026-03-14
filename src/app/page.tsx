@@ -71,12 +71,12 @@ export default function Home() {
           <TerminalText
             text="Build encrypted smart contracts on the EVM."
             as="h1"
-            className="animate-fade-in-up text-[clamp(28px,5vw,56px)] font-bold leading-[1.1] tracking-tight text-[#E8E8ED]"
+            className="animate-fade-in-up text-[clamp(28px,5vw,56px)] font-bold leading-[1.1] tracking-tight text-[#FFFFFF]"
             delay={300}
             speed={25}
           />
 
-          <p className="animate-fade-in-up mt-6 max-w-xl text-[15px] leading-relaxed text-[#5A5F73]" style={{ animationDelay: "0.15s" }}>
+          <p className="animate-fade-in-up mt-6 max-w-xl text-[15px] leading-relaxed text-[#C8C8C8]" style={{ animationDelay: "0.15s" }}>
             Master confidential smart contracts using fully homomorphic encryption.
             4 weeks. 16 lessons. Zero FHE knowledge required.
           </p>
@@ -98,8 +98,8 @@ export default function Home() {
           <div className="animate-fade-in-up mt-14 flex items-center gap-8 md:gap-12" style={{ animationDelay: "0.35s" }}>
             {stats.map((s) => (
               <div key={s.label} className="text-center">
-                <span className="block text-2xl font-bold text-[#E8E8ED] md:text-3xl">{s.value}</span>
-                <span className="mt-1 block text-[10px] tracking-widest text-[#3A3D47]">{s.label}</span>
+                <span className="block text-2xl font-bold text-[#FFFFFF] md:text-3xl">{s.value}</span>
+                <span className="mt-1 block text-[10px] tracking-widest text-[#808080]">{s.label}</span>
               </div>
             ))}
           </div>
@@ -111,10 +111,10 @@ export default function Home() {
                 <span className="t-dot red" />
                 <span className="t-dot yellow" />
                 <span className="t-dot green" />
-                <span className="ml-3 text-[11px] text-[#3A3D47]">ConfidentialToken.sol</span>
+                <span className="ml-3 text-[11px] text-[#808080]">ConfidentialToken.sol</span>
               </div>
               <pre className="!border-0 !bg-transparent m-0 p-4 text-[12px] leading-relaxed">
-                <code className="text-[#7A7F93]">{HERO_CODE}</code>
+                <code className="text-[#A8A8A8]">{HERO_CODE}</code>
               </pre>
             </div>
           </div>
@@ -130,7 +130,7 @@ export default function Home() {
               <span className={`px-3 py-1.5 text-[11px] border whitespace-nowrap ${
                 step.type === "op"
                   ? "border-[#FFC517]/20 bg-[#FFC517]/6 text-[#FFC517]"
-                  : "border-[#1a1a1a] bg-[#0a0a0a] text-[#5A5F73]"
+                  : "border-[#1a1a1a] bg-[#0a0a0a] text-[#C8C8C8]"
               }`}>
                 {step.label}
               </span>
@@ -146,11 +146,11 @@ export default function Home() {
           <TerminalText
             text="Four weeks. One complete engineer."
             as="h2"
-            className="mt-3 text-2xl font-bold text-[#E8E8ED] md:text-3xl"
+            className="mt-3 text-2xl font-bold text-[#FFFFFF] md:text-3xl"
             delay={100}
             speed={20}
           />
-          <p className="mt-3 max-w-lg text-[14px] text-[#5A5F73]">
+          <p className="mt-3 max-w-lg text-[14px] text-[#C8C8C8]">
             Every week builds on the last — from encrypted primitives to a production-grade
             system deployed on Sepolia.
           </p>
@@ -166,13 +166,13 @@ export default function Home() {
               <span className="text-2xl font-light text-[#FFC517] leading-none mb-3">
                 {String(w.n).padStart(2, "0")}
               </span>
-              <h3 className="text-[16px] font-semibold text-[#E8E8ED] transition group-hover:text-[#FFC517]">
+              <h3 className="text-[16px] font-semibold text-[#FFFFFF] transition group-hover:text-[#FFC517]">
                 {w.title}
               </h3>
-              <p className="mt-2 flex-1 text-[13px] text-[#5A5F73]">{w.desc}</p>
-              <div className="mt-4 flex items-center justify-between border-t border-[#1a1a1a] pt-3 text-[11px] text-[#3A3D47]">
+              <p className="mt-2 flex-1 text-[13px] text-[#C8C8C8]">{w.desc}</p>
+              <div className="mt-4 flex items-center justify-between border-t border-[#1a1a1a] pt-3 text-[11px] text-[#808080]">
                 <span>{w.lessons} lessons &middot; {w.hours}</span>
-                <ArrowRight size={12} className="text-[#3A3D47] transition group-hover:translate-x-1 group-hover:text-[#FFC517]" />
+                <ArrowRight size={12} className="text-[#808080] transition group-hover:translate-x-1 group-hover:text-[#FFC517]" />
               </div>
             </Link>
           ))}
@@ -187,11 +187,11 @@ export default function Home() {
         <TerminalText
           text="The infrastructure is here. Now we need the builders."
           as="h2"
-          className="max-w-xl text-2xl font-bold text-[#E8E8ED] md:text-3xl"
+          className="max-w-xl text-2xl font-bold text-[#FFFFFF] md:text-3xl"
           delay={100}
           speed={20}
         />
-        <p className="mt-4 max-w-md text-[14px] text-[#5A5F73]">
+        <p className="mt-4 max-w-md text-[14px] text-[#C8C8C8]">
           Clone the Hardhat template, follow the Week 1 lesson plan, and deploy your first
           confidential contract in under an hour.
         </p>

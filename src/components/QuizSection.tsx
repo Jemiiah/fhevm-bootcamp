@@ -77,12 +77,12 @@ export function QuizSection({ quiz, onComplete, completed = false, savedScore }:
           <span className={`text-[14px] font-bold ${pct >= 70 ? "text-[#FFC517]" : "text-[#FF4444]"}`}>
             {pct >= 70 ? "PASSED" : "FAILED"}
           </span>
-          <span className="text-[12px] text-[#3A3D47]">
+          <span className="text-[12px] text-[#808080]">
             {score}/{totalQuestions} correct ({pct}%)
           </span>
         </div>
 
-        <p className="mb-4 text-[12px] text-[#5A5F73]">
+        <p className="mb-4 text-[12px] text-[#C8C8C8]">
           {pct >= 90 ? "> Excellent. You've mastered this lesson." :
            pct >= 70 ? "> Good. You understand the key concepts." :
            "> Review the lesson material and try again."}
@@ -97,7 +97,7 @@ export function QuizSection({ quiz, onComplete, completed = false, savedScore }:
                 correct ? "border-emerald-500/20 bg-emerald-500/5 text-emerald-400" : "border-red-500/20 bg-red-500/5 text-red-400"
               }`}>
                 {correct ? <CheckCircle size={12} /> : <XCircle size={12} />}
-                <span className="text-[#5A5F73] truncate">{q.question.slice(0, 80)}...</span>
+                <span className="text-[#C8C8C8] truncate">{q.question.slice(0, 80)}...</span>
               </div>
             );
           })}
@@ -105,7 +105,7 @@ export function QuizSection({ quiz, onComplete, completed = false, savedScore }:
 
         <button
           onClick={retakeQuiz}
-          className="flex items-center gap-2 border border-[#1a1a1a] bg-[#0a0a0a] px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#5A5F73] transition hover:border-[#2a2a2a] hover:text-[#B8BCC8]"
+          className="flex items-center gap-2 border border-[#1a1a1a] bg-[#111111] px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#C8C8C8] transition hover:border-[#2a2a2a] hover:text-[#E0E0E0]"
         >
           <RotateCcw size={12} />
           retake
@@ -118,10 +118,10 @@ export function QuizSection({ quiz, onComplete, completed = false, savedScore }:
     <div className="t-card">
       {/* Header */}
       <div className="mb-4 flex items-center justify-between">
-        <span className="text-[11px] uppercase tracking-widest text-[#3A3D47]">
+        <span className="text-[11px] uppercase tracking-widest text-[#808080]">
           quiz
         </span>
-        <span className="text-[12px] text-[#3A3D47] tabular-nums">
+        <span className="text-[12px] text-[#808080] tabular-nums">
           {currentQ + 1}/{totalQuestions}
         </span>
       </div>
@@ -135,7 +135,7 @@ export function QuizSection({ quiz, onComplete, completed = false, savedScore }:
       </div>
 
       {/* Question */}
-      <p className="mb-5 text-[14px] font-medium text-[#E8E8ED]">
+      <p className="mb-5 text-[14px] font-medium text-[#FFFFFF]">
         {question.question}
       </p>
 
@@ -144,7 +144,7 @@ export function QuizSection({ quiz, onComplete, completed = false, savedScore }:
         {question.options.map((opt, i) => {
           const isSelected = selected === i;
           const isCorrect = i === question.correctIndex;
-          let style = "border-[#1a1a1a] bg-[#0a0a0a] text-[#5A5F73] hover:border-[#2a2a2a]";
+          let style = "border-[#1a1a1a] bg-[#111111] text-[#C8C8C8] hover:border-[#2a2a2a]";
 
           if (revealed) {
             if (isCorrect) {
@@ -152,10 +152,10 @@ export function QuizSection({ quiz, onComplete, completed = false, savedScore }:
             } else if (isSelected && !isCorrect) {
               style = "border-red-500/30 bg-red-500/5 text-red-400";
             } else {
-              style = "border-[#1a1a1a] bg-[#080808] text-[#2a2a2a]";
+              style = "border-[#1a1a1a] bg-[#0D0D0D] text-[#5A5A5A]";
             }
           } else if (isSelected) {
-            style = "border-[#FFC517]/30 bg-[#FFC517]/5 text-[#E8E8ED]";
+            style = "border-[#FFC517]/30 bg-[#FFC517]/5 text-[#FFFFFF]";
           }
 
           return (
@@ -165,7 +165,7 @@ export function QuizSection({ quiz, onComplete, completed = false, savedScore }:
               disabled={revealed}
               className={`w-full border px-4 py-3 text-left text-[13px] transition ${style}`}
             >
-              <span className="mr-3 inline-flex h-5 w-5 items-center justify-center border border-[#1a1a1a] bg-[#080808] text-[11px] text-[#3A3D47]">
+              <span className="mr-3 inline-flex h-5 w-5 items-center justify-center border border-[#1a1a1a] bg-[#0D0D0D] text-[11px] text-[#808080]">
                 {String.fromCharCode(65 + i)}
               </span>
               {opt}
@@ -178,8 +178,8 @@ export function QuizSection({ quiz, onComplete, completed = false, savedScore }:
       {revealed && (
         <div className={`mb-5 border-l-2 px-4 py-3 text-[12px] ${
           selected === question.correctIndex
-            ? "border-emerald-500 bg-emerald-500/5 text-[#5A5F73]"
-            : "border-red-500 bg-red-500/5 text-[#5A5F73]"
+            ? "border-emerald-500 bg-emerald-500/5 text-[#C8C8C8]"
+            : "border-red-500 bg-red-500/5 text-[#C8C8C8]"
         }`}>
           {selected === question.correctIndex ? (
             <span className="font-semibold text-emerald-400">CORRECT. </span>
@@ -203,7 +203,7 @@ export function QuizSection({ quiz, onComplete, completed = false, savedScore }:
         ) : (
           <button
             onClick={nextQuestion}
-            className="flex items-center gap-2 border border-[#1a1a1a] bg-[#0a0a0a] px-5 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#B8BCC8] transition hover:border-[#2a2a2a]"
+            className="flex items-center gap-2 border border-[#1a1a1a] bg-[#111111] px-5 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#E0E0E0] transition hover:border-[#2a2a2a]"
           >
             {currentQ < totalQuestions - 1 ? "next" : "finish"}
             <ArrowRight size={12} />

@@ -27,7 +27,7 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         scrolled
-          ? "border-b border-[#1a1a1a] bg-[#000000]/95 backdrop-blur-sm"
+          ? "border-b border-[#1a1a1a] bg-[#0A0A0A]/97 backdrop-blur-sm"
           : "border-b border-transparent bg-transparent"
       }`}
     >
@@ -37,8 +37,8 @@ export function Navbar() {
           <span className="flex h-7 w-7 items-center justify-center bg-[#FFC517] text-[11px] font-black text-[#000000] transition-all group-hover:shadow-[0_0_12px_rgba(255,197,23,0.3)]">
             F
           </span>
-          <span className="text-[13px] font-semibold tracking-tight text-[#B8BCC8]">
-            FHEVM<span className="text-[#5A5F73]">.bootcamp</span>
+          <span className="text-[13px] font-semibold tracking-tight text-[#E0E0E0]">
+            FHEVM<span className="text-[#C8C8C8]">.bootcamp</span>
           </span>
         </Link>
 
@@ -51,7 +51,7 @@ export function Navbar() {
                 key={l.href}
                 href={l.href}
                 className={`relative px-3.5 py-2 text-[12px] font-medium uppercase tracking-wider transition-colors ${
-                  active ? "text-[#FFC517]" : "text-[#5A5F73] hover:text-[#B8BCC8]"
+                  active ? "text-[#FFC517]" : "text-[#C8C8C8] hover:text-[#E0E0E0]"
                 }`}
               >
                 {l.label}
@@ -66,7 +66,7 @@ export function Navbar() {
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="text-[#5A5F73] transition hover:text-[#FFC517] md:hidden"
+          className="text-[#C8C8C8] transition hover:text-[#FFC517] md:hidden"
           aria-label="Toggle menu"
         >
           {open ? <X size={18} /> : <Menu size={18} />}
@@ -75,7 +75,7 @@ export function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`overflow-hidden border-t border-[#1a1a1a] bg-[#000000]/98 backdrop-blur-sm transition-all duration-200 md:hidden ${
+        className={`overflow-hidden border-t border-[#1a1a1a] bg-[#0A0A0A]/99 backdrop-blur-sm transition-all duration-200 md:hidden ${
           open ? "max-h-80 opacity-100" : "max-h-0 opacity-0 border-transparent"
         }`}
       >
@@ -86,7 +86,7 @@ export function Navbar() {
               href={l.href}
               onClick={() => setOpen(false)}
               className={`block py-2.5 text-[12px] uppercase tracking-wider transition-colors ${
-                pathname.startsWith(l.href) ? "text-[#FFC517]" : "text-[#5A5F73] hover:text-[#B8BCC8]"
+                pathname.startsWith(l.href) ? "text-[#FFC517]" : "text-[#C8C8C8] hover:text-[#E0E0E0]"
               }`}
             >
               {pathname.startsWith(l.href) ? "> " : "  "}{l.label}

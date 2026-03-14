@@ -110,19 +110,19 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
   ];
 
   return (
-    <div className="flex h-screen flex-col bg-[#000000] pt-14">
+    <div className="flex h-screen flex-col bg-[#0A0A0A] pt-14">
       {/* Top bar */}
-      <div className="flex items-center justify-between border-b border-[#1a1a1a] bg-[#080808] px-4 py-2">
+      <div className="flex items-center justify-between border-b border-[#1a1a1a] bg-[#0D0D0D] px-4 py-2">
         <div className="flex items-center gap-3">
           <Link
             href={`/curriculum/week/${challenge.weekNumber}`}
-            className="group flex items-center gap-1.5 px-2 py-1 text-[11px] text-[#3A3D47] transition hover:text-[#FFC517]"
+            className="group flex items-center gap-1.5 px-2 py-1 text-[11px] text-[#808080] transition hover:text-[#FFC517]"
           >
             <ChevronLeft size={12} />
             week_{challenge.weekNumber}
           </Link>
           <span className="h-3 w-px bg-[#1a1a1a]" />
-          <h1 className="text-[12px] font-medium text-[#B8BCC8]">{challenge.title}</h1>
+          <h1 className="text-[12px] font-medium text-[#E0E0E0]">{challenge.title}</h1>
           <span className={`tag text-[9px] ${
             challenge.difficulty === "Starter" ? "text-emerald-400 border-emerald-500/20" :
             challenge.difficulty === "Easy" ? "text-blue-400 border-blue-500/20" :
@@ -142,7 +142,7 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
           {prevChallenge && (
             <Link
               href={`/curriculum/week/${challenge.weekNumber}/challenge/${prevChallenge.id}`}
-              className="px-2 py-1 text-[11px] text-[#3A3D47] transition hover:text-[#FFC517]"
+              className="px-2 py-1 text-[11px] text-[#808080] transition hover:text-[#FFC517]"
             >
               <ChevronLeft size={12} className="inline" /> prev
             </Link>
@@ -150,7 +150,7 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
           {nextChallenge && (
             <Link
               href={`/curriculum/week/${challenge.weekNumber}/challenge/${nextChallenge.id}`}
-              className="px-2 py-1 text-[11px] text-[#3A3D47] transition hover:text-[#FFC517]"
+              className="px-2 py-1 text-[11px] text-[#808080] transition hover:text-[#FFC517]"
             >
               next <ChevronRight size={12} className="inline" />
             </Link>
@@ -161,26 +161,26 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
       {/* Main split pane */}
       <div className="flex flex-1 overflow-hidden">
         {/* Left panel — Tabbed (Description / Result / Submissions / Solutions) */}
-        <div className="w-[420px] shrink-0 flex flex-col overflow-hidden border-r border-[#1a1a1a] bg-[#000000]">
+        <div className="w-[440px] shrink-0 flex flex-col overflow-hidden border-r border-[#1a1a1a] bg-[#0A0A0A]">
           {/* Tab bar */}
-          <div className="flex border-b border-[#1a1a1a] bg-[#080808]">
+          <div className="flex border-b border-[#1a1a1a] bg-[#0D0D0D]">
             {leftTabs.map((tab) => (
               <button
                 key={tab.key}
                 onClick={() => setLeftTab(tab.key)}
-                className={`relative flex items-center gap-1.5 px-4 py-2.5 text-[11px] font-medium transition ${
-                  leftTab === tab.key ? "text-[#E8E8ED]" : "text-[#3A3D47] hover:text-[#5A5F73]"
+                className={`relative flex items-center gap-1.5 px-3 py-2.5 text-[11px] font-medium whitespace-nowrap transition ${
+                  leftTab === tab.key ? "text-[#FFFFFF]" : "text-[#808080] hover:text-[#C8C8C8]"
                 }`}
               >
                 {tab.icon}
                 {tab.label}
                 {tab.key === "result" && results && (
-                  <span className={`ml-1 text-[9px] ${results.every(r => r.passed) ? "text-emerald-400" : "text-[#5A5F73]"}`}>
+                  <span className={`ml-1 text-[9px] ${results.every(r => r.passed) ? "text-emerald-400" : "text-[#C8C8C8]"}`}>
                     ({results.filter(r => r.passed).length}/{results.length})
                   </span>
                 )}
                 {tab.key === "submissions" && submissions.length > 0 && (
-                  <span className="ml-1 text-[9px] text-[#3A3D47]">({submissions.length})</span>
+                  <span className="ml-1 text-[9px] text-[#808080]">({submissions.length})</span>
                 )}
                 {leftTab === tab.key && (
                   <span className="absolute bottom-0 left-2 right-2 h-px bg-[#FFC517] shadow-[0_0_4px_rgba(255,197,23,0.3)]" />
@@ -194,13 +194,13 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
             {/* ── DESCRIPTION TAB ── */}
             {leftTab === "description" && (
               <div className="p-5 space-y-5">
-                <p className="text-[13px] leading-[1.75] text-[#5A5F73]">{challenge.description}</p>
+                <p className="text-[13px] leading-[1.75] text-[#C8C8C8]">{challenge.description}</p>
 
                 <div>
                   <h2 className="section-label mb-3">// INSTRUCTIONS</h2>
                   <ol className="space-y-1">
                     {challenge.instructions.map((inst, i) => (
-                      <li key={i} className="flex items-start gap-2.5 border border-[#1a1a1a] bg-[#0a0a0a] px-3 py-2.5 text-[12px] text-[#5A5F73]">
+                      <li key={i} className="flex items-start gap-2.5 border border-[#1a1a1a] bg-[#111111] px-3 py-2.5 text-[12px] text-[#C8C8C8]">
                         <span className="text-[#FFC517] shrink-0">{String(i + 1).padStart(2, "0")}.</span>
                         {inst}
                       </li>
@@ -212,7 +212,7 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
                 <div>
                   <button
                     onClick={() => setShowHints(!showHints)}
-                    className="flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#3A3D47] transition hover:text-[#FFC517]"
+                    className="flex items-center gap-2 text-[11px] uppercase tracking-wider text-[#808080] transition hover:text-[#FFC517]"
                   >
                     <Lightbulb size={12} className={showHints ? "text-[#FFC517]" : ""} />
                     {showHints ? "hide_hints" : "show_hints"}
@@ -220,7 +220,7 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
                   <div className={`overflow-hidden transition-all duration-200 ${showHints ? "mt-2 max-h-[500px] opacity-100" : "max-h-0 opacity-0"}`}>
                     <div className="space-y-1">
                       {challenge.hints.map((hint, i) => (
-                        <div key={i} className="border-l-2 border-[#FFC517]/30 bg-[#FFC517]/[0.03] px-3 py-2 text-[11px] text-[#5A5F73]">
+                        <div key={i} className="border-l-2 border-[#FFC517]/30 bg-[#FFC517]/[0.03] px-3 py-2 text-[11px] text-[#C8C8C8]">
                           <span className="text-[#FFC517]/70">hint_{i + 1}:</span> {hint}
                         </div>
                       ))}
@@ -230,20 +230,20 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
 
                 {/* Score summary if results exist */}
                 {results && (
-                  <div className="border border-[#1a1a1a] bg-[#0a0a0a] p-4">
+                  <div className="border border-[#1a1a1a] bg-[#111111] p-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-[11px] text-[#3A3D47] uppercase tracking-wider">score</span>
+                      <span className="text-[11px] text-[#808080] uppercase tracking-wider">score</span>
                       <div className="flex items-center gap-2">
                         <div className="h-1 w-20 bg-[#1a1a1a] overflow-hidden">
                           <div
                             className="h-full transition-all duration-500"
                             style={{
                               width: `${(score / maxScore) * 100}%`,
-                              background: score === maxScore ? "#FFC517" : "#5A5F73",
+                              background: score === maxScore ? "#FFC517" : "#C8C8C8",
                             }}
                           />
                         </div>
-                        <span className={`text-[13px] font-semibold tabular-nums ${score === maxScore ? "text-[#FFC517]" : "text-[#5A5F73]"}`}>
+                        <span className={`text-[13px] font-semibold tabular-nums ${score === maxScore ? "text-[#FFC517]" : "text-[#C8C8C8]"}`}>
                           {score}/{maxScore}
                         </span>
                       </div>
@@ -257,21 +257,21 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
             {leftTab === "result" && (
               <div className="flex h-full flex-col">
                 {isRunning ? (
-                  <div className="flex flex-1 items-center justify-center text-[#3A3D47]">
+                  <div className="flex flex-1 items-center justify-center text-[#808080]">
                     <span className="text-[12px] animate-pulse">running tests...</span>
                   </div>
                 ) : !results ? (
-                  <div className="flex flex-1 items-center justify-center text-[#2a2a2a]">
+                  <div className="flex flex-1 items-center justify-center text-[#5A5A5A]">
                     <span className="text-[12px]">&gt; click &quot;run tests&quot; to see results</span>
                   </div>
                 ) : (
                   <>
                     {/* Summary bar */}
                     <div className="flex items-center justify-between border-b border-[#1a1a1a] px-5 py-3">
-                      <span className={`text-[13px] font-semibold ${results.every(r => r.passed) ? "text-emerald-400" : "text-[#5A5F73]"}`}>
+                      <span className={`text-[13px] font-semibold ${results.every(r => r.passed) ? "text-emerald-400" : "text-[#C8C8C8]"}`}>
                         {results.filter(r => r.passed).length}/{results.length} tests passed
                       </span>
-                      <span className={`text-[13px] font-bold tabular-nums ${score === maxScore ? "text-[#FFC517]" : "text-[#5A5F73]"}`}>
+                      <span className={`text-[13px] font-bold tabular-nums ${score === maxScore ? "text-[#FFC517]" : "text-[#C8C8C8]"}`}>
                         {score}/{maxScore} pts
                       </span>
                     </div>
@@ -290,7 +290,7 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
                           {r.passed ? <CheckCircle size={13} className="mt-0.5 shrink-0" /> : <XCircle size={13} className="mt-0.5 shrink-0" />}
                           <div>
                             <span className="font-medium">{r.passed ? "PASS" : "FAIL"}</span>
-                            <span className="ml-2 text-[#5A5F73]">{r.name}</span>
+                            <span className="ml-2 text-[#C8C8C8]">{r.name}</span>
                           </div>
                         </div>
                       ))}
@@ -298,8 +298,8 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
 
                     {/* Log output */}
                     <div className="border-t border-[#1a1a1a] px-5 py-3">
-                      <span className="text-[10px] uppercase tracking-widest text-[#3A3D47]">log output</span>
-                      <div className="mt-2 text-[11px] text-[#3A3D47] font-mono">
+                      <span className="text-[10px] uppercase tracking-widest text-[#808080]">log output</span>
+                      <div className="mt-2 text-[11px] text-[#808080] font-mono">
                         {results.every(r => r.passed) ? (
                           <div className="text-[#FFC517]">&gt; All validation checks passed. Challenge complete!</div>
                         ) : (
@@ -313,7 +313,7 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
                       <div className="border-t border-[#FFC517]/20 bg-[#FFC517]/[0.05] px-5 py-3 flex items-center gap-3">
                         <CheckCircle size={14} className="text-[#FFC517]" />
                         <span className="text-[#FFC517] font-bold text-[13px]">ALL TESTS PASSED</span>
-                        <span className="text-[11px] text-[#3A3D47]">{score} points earned</span>
+                        <span className="text-[11px] text-[#808080]">{score} points earned</span>
                       </div>
                     )}
                   </>
@@ -326,9 +326,9 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
               <div className="p-5">
                 {submissions.length === 0 ? (
                   <div className="flex flex-col items-center justify-center py-16 text-center">
-                    <History size={24} className="mb-3 text-[#2a2a2a]" />
-                    <span className="text-[13px] text-[#3A3D47]">No submissions yet</span>
-                    <span className="mt-1 text-[11px] text-[#2a2a2a]">Run tests to create your first submission</span>
+                    <History size={24} className="mb-3 text-[#5A5A5A]" />
+                    <span className="text-[13px] text-[#808080]">No submissions yet</span>
+                    <span className="mt-1 text-[11px] text-[#5A5A5A]">Run tests to create your first submission</span>
                   </div>
                 ) : (
                   <div className="space-y-2">
@@ -341,7 +341,7 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
                           className={`border px-4 py-3 ${
                             sub.allPassed
                               ? "border-emerald-500/15 bg-emerald-500/[0.03]"
-                              : "border-[#1a1a1a] bg-[#0a0a0a]"
+                              : "border-[#1a1a1a] bg-[#111111]"
                           }`}
                         >
                           <div className="flex items-center justify-between">
@@ -351,15 +351,15 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
                               ) : (
                                 <XCircle size={12} className="text-red-400/60" />
                               )}
-                              <span className={`text-[12px] font-semibold ${sub.allPassed ? "text-emerald-400" : "text-[#5A5F73]"}`}>
+                              <span className={`text-[12px] font-semibold ${sub.allPassed ? "text-emerald-400" : "text-[#C8C8C8]"}`}>
                                 {sub.allPassed ? "Accepted" : "Failed"}
                               </span>
                             </div>
-                            <span className={`text-[12px] font-bold tabular-nums ${sub.allPassed ? "text-[#FFC517]" : "text-[#3A3D47]"}`}>
+                            <span className={`text-[12px] font-bold tabular-nums ${sub.allPassed ? "text-[#FFC517]" : "text-[#808080]"}`}>
                               {sub.score}/{sub.maxScore}
                             </span>
                           </div>
-                          <div className="mt-1.5 flex items-center gap-3 text-[10px] text-[#3A3D47]">
+                          <div className="mt-1.5 flex items-center gap-3 text-[10px] text-[#808080]">
                             <span className="flex items-center gap-1">
                               <Clock size={9} />
                               {date.toLocaleDateString()} {date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
@@ -382,7 +382,7 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
                     <h2 className="section-label">// REFERENCE_SOLUTION</h2>
                     <button
                       onClick={() => setShowSolution(!showSolution)}
-                      className="flex items-center gap-1.5 text-[11px] text-[#3A3D47] transition hover:text-[#FFC517]"
+                      className="flex items-center gap-1.5 text-[11px] text-[#808080] transition hover:text-[#FFC517]"
                     >
                       {showSolution ? <EyeOff size={11} /> : <Eye size={11} />}
                       {showSolution ? "hide" : "reveal"}
@@ -390,13 +390,13 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
                   </div>
 
                   {!showSolution ? (
-                    <div className="flex flex-col items-center justify-center border border-[#1a1a1a] bg-[#0a0a0a] py-12 text-center">
-                      <Eye size={20} className="mb-3 text-[#2a2a2a]" />
-                      <span className="text-[12px] text-[#3A3D47]">Solution is hidden</span>
-                      <span className="mt-1 text-[11px] text-[#2a2a2a]">Try solving it yourself first!</span>
+                    <div className="flex flex-col items-center justify-center border border-[#1a1a1a] bg-[#111111] py-12 text-center">
+                      <Eye size={20} className="mb-3 text-[#5A5A5A]" />
+                      <span className="text-[12px] text-[#808080]">Solution is hidden</span>
+                      <span className="mt-1 text-[11px] text-[#5A5A5A]">Try solving it yourself first!</span>
                       <button
                         onClick={() => setShowSolution(true)}
-                        className="mt-4 flex items-center gap-1.5 px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#3A3D47] border border-[#1a1a1a] transition hover:border-[#FFC517]/30 hover:text-[#FFC517]"
+                        className="mt-4 flex items-center gap-1.5 px-4 py-2 text-[11px] font-semibold uppercase tracking-wider text-[#808080] border border-[#1a1a1a] transition hover:border-[#FFC517]/30 hover:text-[#FFC517]"
                       >
                         <Eye size={11} />
                         reveal solution
@@ -409,11 +409,11 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
                           <span className="t-dot red" />
                           <span className="t-dot yellow" />
                           <span className="t-dot green" />
-                          <span className="ml-2 text-[10px] text-[#3A3D47]">solution.sol</span>
+                          <span className="ml-2 text-[10px] text-[#808080]">solution.sol</span>
                         </div>
-                        <span className="text-[9px] uppercase tracking-wider text-[#2a2a2a]">solidity</span>
+                        <span className="text-[9px] uppercase tracking-wider text-[#5A5A5A]">solidity</span>
                       </div>
-                      <pre className="!border-0 !bg-transparent p-4 text-[11px] leading-[1.8] text-[#5A5F73] overflow-x-auto">
+                      <pre className="!border-0 !bg-transparent p-4 text-[11px] leading-[1.8] text-[#C8C8C8] overflow-x-auto">
                         <code>{challenge.solutionCode}</code>
                       </pre>
                     </div>
@@ -421,8 +421,8 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
                 </div>
 
                 {/* Community-style info */}
-                <div className="border border-[#1a1a1a] bg-[#0a0a0a] px-4 py-3">
-                  <span className="text-[11px] text-[#3A3D47]">
+                <div className="border border-[#1a1a1a] bg-[#111111] px-4 py-3">
+                  <span className="text-[11px] text-[#808080]">
                     Community solutions coming soon. For now, compare your approach with the reference solution above.
                   </span>
                 </div>
@@ -434,12 +434,12 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
         {/* Right panel — Editor + Actions */}
         <div className="flex flex-1 flex-col overflow-hidden">
           {/* Editor tabs + actions */}
-          <div className="flex items-center justify-between border-b border-[#1a1a1a] bg-[#080808] px-2">
+          <div className="flex items-center justify-between border-b border-[#1a1a1a] bg-[#0D0D0D] px-2">
             <div className="flex">
               <button
                 onClick={() => setEditorTab("solution")}
                 className={`relative flex items-center gap-1.5 px-4 py-2.5 text-[11px] uppercase tracking-wider font-medium transition ${
-                  editorTab === "solution" ? "text-[#E8E8ED]" : "text-[#3A3D47] hover:text-[#5A5F73]"
+                  editorTab === "solution" ? "text-[#FFFFFF]" : "text-[#808080] hover:text-[#C8C8C8]"
                 }`}
               >
                 solution.sol
@@ -450,7 +450,7 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
               <button
                 onClick={() => setEditorTab("tests")}
                 className={`relative flex items-center gap-1.5 px-4 py-2.5 text-[11px] uppercase tracking-wider font-medium transition ${
-                  editorTab === "tests" ? "text-[#E8E8ED]" : "text-[#3A3D47] hover:text-[#5A5F73]"
+                  editorTab === "tests" ? "text-[#FFFFFF]" : "text-[#808080] hover:text-[#C8C8C8]"
                 }`}
               >
                 tests.sol
@@ -462,7 +462,7 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
             <div className="flex items-center gap-2 pr-2">
               <button
                 onClick={resetCode}
-                className="flex items-center gap-1.5 px-3 py-1.5 text-[11px] text-[#3A3D47] transition hover:text-[#B8BCC8]"
+                className="flex items-center gap-1.5 px-3 py-1.5 text-[11px] text-[#808080] transition hover:text-[#E0E0E0]"
               >
                 <RotateCcw size={11} />
                 reset

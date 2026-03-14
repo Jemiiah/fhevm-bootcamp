@@ -84,8 +84,8 @@ export default function ResourcesPage() {
     <div className="mx-auto min-h-screen max-w-5xl px-6 pt-24 pb-20">
       <div className="mb-8 animate-fade-in-up">
         <span className="section-label">// RESOURCES</span>
-        <h1 className="mt-3 text-2xl font-bold text-[#E8E8ED]">Resources</h1>
-        <p className="mt-2 text-[13px] text-[#5A5F73]">
+        <h1 className="mt-3 text-2xl font-bold text-[#FFFFFF]">Resources</h1>
+        <p className="mt-2 text-[13px] text-[#C8C8C8]">
           Official docs, code templates, and community links.
         </p>
       </div>
@@ -99,7 +99,7 @@ export default function ResourcesPage() {
             className={`px-4 py-2 text-[11px] font-semibold uppercase tracking-wider transition ${
               active === s.key
                 ? "bg-[#FFC517]/8 text-[#FFC517] border border-[#FFC517]/20"
-                : "text-[#3A3D47] border border-transparent hover:text-[#5A5F73]"
+                : "text-[#808080] border border-transparent hover:text-[#C8C8C8]"
             }`}
           >
             {s.label}
@@ -116,13 +116,13 @@ export default function ResourcesPage() {
               href={d.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between border border-[#1a1a1a] bg-[#0a0a0a] px-5 py-3.5 transition hover:border-[#2a2a2a] hover:bg-[#111318]"
+              className="flex items-center justify-between border border-[#1a1a1a] bg-[#111111] px-5 py-3.5 transition hover:border-[#2a2a2a] hover:bg-[#161616]"
             >
               <div>
-                <span className="text-[13px] font-medium text-[#B8BCC8]">{d.title}</span>
-                <span className="ml-3 text-[12px] text-[#3A3D47]">{d.desc}</span>
+                <span className="text-[13px] font-medium text-[#E0E0E0]">{d.title}</span>
+                <span className="ml-3 text-[12px] text-[#808080]">{d.desc}</span>
               </div>
-              <span className="text-[#3A3D47]">&rarr;</span>
+              <span className="text-[#808080]">&rarr;</span>
             </a>
           ))}
         </div>
@@ -139,10 +139,10 @@ export default function ResourcesPage() {
               rel="noopener noreferrer"
               className="t-card group"
             >
-              <h3 className="text-[13px] font-medium text-[#B8BCC8] group-hover:text-[#FFC517]">
+              <h3 className="text-[13px] font-medium text-[#E0E0E0] group-hover:text-[#FFC517]">
                 {r.name}
               </h3>
-              <p className="mt-1 text-[12px] text-[#3A3D47]">{r.desc}</p>
+              <p className="mt-1 text-[12px] text-[#808080]">{r.desc}</p>
             </a>
           ))}
         </div>
@@ -154,7 +154,7 @@ export default function ResourcesPage() {
           {snippets.map((s) => (
             <div key={s.title}>
               <div className="mb-2 flex items-center gap-3">
-                <span className="text-[13px] font-medium text-[#B8BCC8]">{s.title}</span>
+                <span className="text-[13px] font-medium text-[#E0E0E0]">{s.title}</span>
                 <span className="tag text-[10px]">{s.lang}</span>
               </div>
               <div className="t-card-window">
@@ -163,7 +163,7 @@ export default function ResourcesPage() {
                   <span className="t-dot yellow" />
                   <span className="t-dot green" />
                 </div>
-                <pre className="!border-0 !bg-transparent p-4 text-[12px] text-[#5A5F73]">
+                <pre className="!border-0 !bg-transparent p-4 text-[12px] text-[#C8C8C8]">
                   <code>{s.code}</code>
                 </pre>
               </div>
@@ -187,8 +187,8 @@ export default function ResourcesPage() {
               rel="noopener noreferrer"
               className="t-card group"
             >
-              <h3 className="text-[13px] font-medium text-[#B8BCC8] group-hover:text-[#FFC517]">{c.label}</h3>
-              <p className="mt-1 text-[12px] text-[#3A3D47]">{c.desc}</p>
+              <h3 className="text-[13px] font-medium text-[#E0E0E0] group-hover:text-[#FFC517]">{c.label}</h3>
+              <p className="mt-1 text-[12px] text-[#808080]">{c.desc}</p>
             </a>
           ))}
         </div>

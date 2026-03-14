@@ -31,8 +31,8 @@ export default function InstructorPage() {
     <div className="mx-auto min-h-screen max-w-5xl px-6 pt-24 pb-20">
       <div className="mb-8 animate-fade-in-up">
         <span className="section-label">// INSTRUCTOR</span>
-        <h1 className="mt-3 text-2xl font-bold text-[#E8E8ED]">Instructor Guide</h1>
-        <p className="mt-2 text-[13px] text-[#5A5F73]">
+        <h1 className="mt-3 text-2xl font-bold text-[#FFFFFF]">Instructor Guide</h1>
+        <p className="mt-2 text-[13px] text-[#C8C8C8]">
           Teaching notes, pacing, and assessment guidelines.
         </p>
       </div>
@@ -46,7 +46,7 @@ export default function InstructorPage() {
             className={`px-4 py-2 text-[11px] font-semibold uppercase tracking-wider transition ${
               active === s.key
                 ? "bg-[#FFC517]/8 text-[#FFC517] border border-[#FFC517]/20"
-                : "text-[#3A3D47] border border-transparent hover:text-[#5A5F73]"
+                : "text-[#808080] border border-transparent hover:text-[#C8C8C8]"
             }`}
           >
             {s.label}
@@ -59,21 +59,21 @@ export default function InstructorPage() {
         <div className="space-y-3">
           <div className="grid gap-3 md:grid-cols-2">
             <div className="t-card">
-              <h3 className="text-[13px] font-semibold text-[#E8E8ED]">Cohort-Based</h3>
-              <p className="mt-2 text-[12px] text-[#5A5F73]">
+              <h3 className="text-[13px] font-semibold text-[#FFFFFF]">Cohort-Based</h3>
+              <p className="mt-2 text-[12px] text-[#C8C8C8]">
                 2 sessions/week &times; 3 hours each, 4 weeks total.
               </p>
             </div>
             <div className="t-card">
-              <h3 className="text-[13px] font-semibold text-[#E8E8ED]">Self-Paced</h3>
-              <p className="mt-2 text-[12px] text-[#5A5F73]">
+              <h3 className="text-[13px] font-semibold text-[#FFFFFF]">Self-Paced</h3>
+              <p className="mt-2 text-[12px] text-[#C8C8C8]">
                 ~55 hours total. Weekly deadlines recommended.
               </p>
             </div>
           </div>
           <div className="t-card">
-            <h3 className="text-[13px] font-semibold text-[#E8E8ED]">Prerequisites</h3>
-            <p className="mt-2 text-[12px] text-[#5A5F73]">
+            <h3 className="text-[13px] font-semibold text-[#FFFFFF]">Prerequisites</h3>
+            <p className="mt-2 text-[12px] text-[#C8C8C8]">
               Basic Ethereum &amp; Solidity, Hardhat experience. No FHE background required.
             </p>
           </div>
@@ -85,14 +85,14 @@ export default function InstructorPage() {
         <div className="space-y-3">
           {WEEKS.map((week) => (
             <div key={week.number} className="t-card">
-              <h3 className="mb-3 text-[13px] font-semibold text-[#E8E8ED]">
+              <h3 className="mb-3 text-[13px] font-semibold text-[#FFFFFF]">
                 Week {week.number}: {week.title}
-                <span className="ml-2 text-[11px] font-normal text-[#3A3D47]">{week.estimatedTime}</span>
+                <span className="ml-2 text-[11px] font-normal text-[#808080]">{week.estimatedTime}</span>
               </h3>
               <div className="space-y-1">
                 {week.instructorNotes.map((note, i) => (
-                  <div key={i} className="flex items-start gap-3 border border-[#1a1a1a] bg-[#080808] px-4 py-2.5 text-[12px] text-[#5A5F73]">
-                    <span className="text-[#3A3D47]">{String(i + 1).padStart(2, "0")}.</span>
+                  <div key={i} className="flex items-start gap-3 border border-[#1a1a1a] bg-[#0D0D0D] px-4 py-2.5 text-[12px] text-[#C8C8C8]">
+                    <span className="text-[#808080]">{String(i + 1).padStart(2, "0")}.</span>
                     {note}
                   </div>
                 ))}
@@ -108,7 +108,7 @@ export default function InstructorPage() {
           {mistakes.map((m, i) => (
             <div key={i} className="t-card">
               <h3 className="text-[13px] font-medium text-[#FF4444]">{m.title}</h3>
-              <p className="mt-1.5 text-[12px] text-[#5A5F73]">
+              <p className="mt-1.5 text-[12px] text-[#C8C8C8]">
                 <span className="text-[#FFC517]">&gt; fix:</span> {m.fix}
               </p>
             </div>
@@ -121,7 +121,7 @@ export default function InstructorPage() {
         <div className="t-card !p-0 overflow-hidden">
           <table className="w-full text-[12px]">
             <thead>
-              <tr className="border-b border-[#1a1a1a] text-[#3A3D47]">
+              <tr className="border-b border-[#1a1a1a] text-[#808080]">
                 <th className="px-5 py-3 text-left text-[10px] uppercase tracking-widest font-semibold">Week</th>
                 <th className="px-5 py-3 text-left text-[10px] uppercase tracking-widest font-semibold">Focus</th>
                 <th className="px-5 py-3 text-left text-[10px] uppercase tracking-widest font-semibold">Hours</th>
@@ -137,9 +137,9 @@ export default function InstructorPage() {
               ].map((row) => (
                 <tr key={row.w} className="border-b border-[#1a1a1a]">
                   <td className="px-5 py-3 text-[#FFC517]">{String(row.w).padStart(2, "0")}</td>
-                  <td className="px-5 py-3 text-[#B8BCC8]">{row.focus}</td>
-                  <td className="px-5 py-3 text-[#5A5F73]">{row.hours}h</td>
-                  <td className="px-5 py-3 text-[#3A3D47]">{row.challenge}</td>
+                  <td className="px-5 py-3 text-[#E0E0E0]">{row.focus}</td>
+                  <td className="px-5 py-3 text-[#C8C8C8]">{row.hours}h</td>
+                  <td className="px-5 py-3 text-[#808080]">{row.challenge}</td>
                 </tr>
               ))}
             </tbody>
@@ -159,10 +159,10 @@ export default function InstructorPage() {
             { step: "Run tests", cmd: "npx hardhat test" },
           ].map((s, i) => (
             <div key={i}>
-              <span className="text-[12px] text-[#5A5F73]">
+              <span className="text-[12px] text-[#C8C8C8]">
                 <span className="text-[#FFC517]">{String(i + 1).padStart(2, "0")}.</span> {s.step}
               </span>
-              <pre className="mt-1 !border-[#1a1a1a] !bg-[#080808] px-4 py-2 text-[11px] text-[#3A3D47]">
+              <pre className="mt-1 !border-[#1a1a1a] !bg-[#0D0D0D] px-4 py-2 text-[11px] text-[#808080]">
                 <code>{s.cmd}</code>
               </pre>
             </div>
@@ -180,7 +180,7 @@ export default function InstructorPage() {
             "Min test coverage: 5 tests for weeks 1-2, 10 for week 3, 15 for capstone.",
             "For capstone: weight originality and ambition alongside correctness.",
           ].map((tip, i) => (
-            <div key={i} className="flex items-start gap-3 border border-[#1a1a1a] bg-[#080808] px-4 py-3 text-[12px] text-[#5A5F73]">
+            <div key={i} className="flex items-start gap-3 border border-[#1a1a1a] bg-[#0D0D0D] px-4 py-3 text-[12px] text-[#C8C8C8]">
               <span className="text-[#FFC517]">&gt;</span>
               {tip}
             </div>

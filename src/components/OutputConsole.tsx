@@ -13,7 +13,7 @@ interface OutputConsoleProps {
 export function OutputConsole({ results, score, maxScore, isRunning }: OutputConsoleProps) {
   if (isRunning) {
     return (
-      <div className="flex h-full items-center justify-center gap-3 bg-[#000000] text-[#3A3D47]">
+      <div className="flex h-full items-center justify-center gap-3 bg-[#0A0A0A] text-[#808080]">
         <span className="text-[12px] animate-pulse">running tests...</span>
       </div>
     );
@@ -21,7 +21,7 @@ export function OutputConsole({ results, score, maxScore, isRunning }: OutputCon
 
   if (!results) {
     return (
-      <div className="flex h-full items-center justify-center bg-[#000000] text-[#2a2a2a]">
+      <div className="flex h-full items-center justify-center bg-[#0A0A0A] text-[#5A5A5A]">
         <span className="text-[12px]">&gt; click &quot;run tests&quot; to validate your code</span>
       </div>
     );
@@ -32,14 +32,14 @@ export function OutputConsole({ results, score, maxScore, isRunning }: OutputCon
   const allPassed = passed === total;
 
   return (
-    <div className="flex h-full flex-col bg-[#000000]">
+    <div className="flex h-full flex-col bg-[#0A0A0A]">
       {/* Header */}
       <div className="flex items-center justify-between border-b border-[#1a1a1a] px-4 py-2">
-        <span className="text-[10px] uppercase tracking-widest text-[#3A3D47]">
+        <span className="text-[10px] uppercase tracking-widest text-[#808080]">
           test_results
         </span>
         <div className="flex items-center gap-3">
-          <span className={`text-[12px] font-semibold ${allPassed ? "text-emerald-400" : "text-[#5A5F73]"}`}>
+          <span className={`text-[12px] font-semibold ${allPassed ? "text-emerald-400" : "text-[#C8C8C8]"}`}>
             {passed}/{total} passed
           </span>
           <span className="text-[12px] font-semibold text-[#FFC517]">
@@ -67,7 +67,7 @@ export function OutputConsole({ results, score, maxScore, isRunning }: OutputCon
       {allPassed && (
         <div className="border-t border-[#FFC517]/20 bg-[#FFC517]/5 px-4 py-3 flex items-center gap-3">
           <span className="text-[#FFC517] font-bold text-[13px]">&gt; ALL TESTS PASSED</span>
-          <span className="text-[11px] text-[#3A3D47]">{score} points earned</span>
+          <span className="text-[11px] text-[#808080]">{score} points earned</span>
         </div>
       )}
     </div>
