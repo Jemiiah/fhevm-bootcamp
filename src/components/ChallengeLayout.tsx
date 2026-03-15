@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import Link from "next/link";
 import {
   Play, RotateCcw, Eye, EyeOff, ChevronLeft, ChevronRight,
@@ -50,11 +50,37 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
   const [showSolution, setShowSolution] = useState(false);
   const [showHints, setShowHints] = useState(false);
   const [submissions, setSubmissions] = useState<Submission[]>([]);
+  const [panelWidth, setPanelWidth] = useState(440);
+  const isDragging = useRef(false);
+  const containerRef = useRef<HTMLDivElement>(null);
   const { toggleLesson, isCompleted } = useProgress();
 
   useEffect(() => {
     setSubmissions(getSubmissions(challenge.id));
   }, [challenge.id]);
+
+  // Drag-to-resize handler
+  useEffect(() => {
+    const onMouseMove = (e: MouseEvent) => {
+      if (!isDragging.current || !containerRef.current) return;
+      const rect = containerRef.current.getBoundingClientRect();
+      const newWidth = e.clientX - rect.left;
+      const min = 280;
+      const max = rect.width * 0.6;
+      setPanelWidth(Math.min(max, Math.max(min, newWidth)));
+    };
+    const onMouseUp = () => {
+      isDragging.current = false;
+      document.body.style.cursor = "";
+      document.body.style.userSelect = "";
+    };
+    window.addEventListener("mousemove", onMouseMove);
+    window.addEventListener("mouseup", onMouseUp);
+    return () => {
+      window.removeEventListener("mousemove", onMouseMove);
+      window.removeEventListener("mouseup", onMouseUp);
+    };
+  }, []);
 
   const score = results ? results.filter((r) => r.passed).reduce((sum, _, i) => {
     if (results[i].passed) return sum + challenge.validationRules[i].points;
@@ -159,9 +185,9 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
       </div>
 
       {/* Main split pane */}
-      <div className="flex flex-1 overflow-hidden">
+      <div ref={containerRef} className="flex flex-1 overflow-hidden">
         {/* Left panel — Tabbed (Description / Result / Submissions / Solutions) */}
-        <div className="w-[440px] shrink-0 flex flex-col overflow-hidden border-r border-[#1a1a1a] bg-[#0A0A0A]">
+        <div style={{ width: panelWidth }} className="shrink-0 flex flex-col overflow-hidden border-r border-[#1a1a1a] bg-[#0A0A0A]">
           {/* Tab bar */}
           <div className="flex border-b border-[#1a1a1a] bg-[#0D0D0D]">
             {leftTabs.map((tab) => (
@@ -430,6 +456,16 @@ export function ChallengeLayout({ challenge, prevChallenge, nextChallenge }: Cha
             )}
           </div>
         </div>
+
+        {/* Resize handle */}
+        <div
+          onMouseDown={() => {
+            isDragging.current = true;
+            document.body.style.cursor = "col-resize";
+            document.body.style.userSelect = "none";
+          }}
+          className="w-1 shrink-0 cursor-col-resize bg-[#1a1a1a] hover:bg-[#FFC517]/40 active:bg-[#FFC517]/60 transition-colors"
+        />
 
         {/* Right panel — Editor + Actions */}
         <div className="flex flex-1 flex-col overflow-hidden">
